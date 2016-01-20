@@ -8,10 +8,24 @@
 	<packaging>pom</packaging>
 	
 	<name>Builder Product</name>
-	<description>A suite of tools for testing out the maven build process.</description>
+	<description>A complete suite of tools for testing out the maven build process.</description>
+
+	<scm>
+		<developerConnection>scm:svn:https://github.com/magex9/build.git/trunk</developerConnection>
+	</scm>
 
 	<modules>
+<<<<<<< HEAD
+		<module>builder-master-pom</module>
+		<module>builder-simple-archetype</module>
+		<module>builder-jar</module>
+		<module>builder-war</module>
+		<module>builder-ear</module>
+		<module>builder-exec-program</module>
+		<module>builder-reporting</module>
+=======
 		<module>master-pom</module>
+<!--
 		<module>simple-archetype</module>
 		<module>builder-jar</module>
 		<module>builder-war</module>
@@ -19,6 +33,8 @@
 		<module>exec-program</module>
 		<module>reporting</module>
 		<module>setup</module>
+-->
+>>>>>>> origin/master
 	</modules>
 	
 </project>
