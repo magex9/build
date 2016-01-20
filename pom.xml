@@ -12,6 +12,13 @@
 
 	<modules>
 		<module>master-pom</module>
+		<module>simple-archetype</module>
+		<module>builder-jar</module>
+		<module>builder-war</module>
+		<module>builder-ear</module>
+		<module>exec-program</module>
+		<module>reporting</module>
+		<module>setup</module>
 	</modules>
 	
 </project>
