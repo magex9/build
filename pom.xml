@@ -13,9 +13,10 @@
 	<scm>
 		<developerConnection>scm:svn:https://github.com/magex9/build.git/trunk</developerConnection>
 	</scm>
-<!--
+
 	<modules>
 		<module>master-pom</module>
+<!--
 		<module>simple-archetype</module>
 		<module>builder-jar</module>
 		<module>builder-war</module>
@@ -23,7 +24,7 @@
 		<module>exec-program</module>
 		<module>reporting</module>
 		<module>setup</module>
-	</modules>
 -->
+	</modules>
 	
 </project>
