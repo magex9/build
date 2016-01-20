@@ -8,7 +8,7 @@
 	<packaging>pom</packaging>
 	
 	<name>Builder Product</name>
-	<description>A suite of tools for testing out the maven build process.</description>
+	<description>A complete suite of tools for testing out the maven build process.</description>
 
 	<modules>
 		<module>master-pom</module>
