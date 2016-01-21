@@ -3,13 +3,13 @@
 
 	<groupId>ca.magex.build</groupId>
 	<artifactId>builder-reports</artifactId>
-	<version>1.6.4-SNAPSHOT</version>
+	<version>1.6.4</version>
 	
 	<name>Builder Reports</name>
 	<description>...</description>
 
 	<scm>
-		<developerConnection>scm:svn:https://github.com/magex9/build.git/trunk/builder-reports</developerConnection>
+		<developerConnection>scm:svn:https://github.com/magex9/build.git/tags/builder-product-1.6.4/builder-reports</developerConnection>
 	</scm>
 
 	<dependencies>
