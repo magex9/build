@@ -33,12 +33,12 @@ public class BuildInfoMojo extends AbstractMojo {
 
 		try {
 			new File("target").mkdir();
-			FileUtils.fileWrite("target/props.data", "test");
+			FileUtils.fileWrite("target/build-info.properties", "test=42");
 		} catch (IOException e) {
 			throw new MojoExecutionException("Error creating file", e);
 		}
 		
-		projectHelper.attachArtifact(project, new File("target/props.data"), "build-info");
+		projectHelper.attachArtifact(project, "props", "build-info", new File("target/build-info.properties"));
 
 	}
 }
