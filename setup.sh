@@ -29,12 +29,16 @@ mvn clean deploy
 mvn --batch-mode release:prepare release:perform
 
 # Site
-#mvn site
+mvn site
 
 # Useful commands
-mvn dependency:tree
+#mvn dependency:tree eclipse:eclipse findbugs:findbugs cobertura:cobertura
+
+# Create an archetype
+cd target
+mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-webapp -DgroupId=ca.magex.archetype -DartifactId=mywebapp -Dversion=1.0.0-SNAPSHOT
 
 # Zip up required content
-#rm -rf $WORKSPACE/local-repo/ca
-#tar -c $WORKSPACE/local-repo | gzip > $WORKSPACE/maven-central.tar.gz
+rm -rf $WORKSPACE/local-repo/ca
+tar -c $WORKSPACE/local-repo | gzip > $WORKSPACE/maven-central.tar.gz
 
