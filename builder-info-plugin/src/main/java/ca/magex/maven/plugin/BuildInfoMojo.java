@@ -32,6 +32,7 @@ public class BuildInfoMojo extends AbstractMojo {
 		getLog().info("Hello, world.");
 
 		try {
+			new File("target").mkdir();
 			FileUtils.fileWrite("target/props.data", "test");
 		} catch (IOException e) {
 			throw new MojoExecutionException("Error creating file", e);
