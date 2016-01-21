@@ -23,7 +23,7 @@
 					<execution>
 						<phase>compile</phase>
 						<goals>
-							<goal>sayhi</goal>
+							<goal>attach</goal>
 						</goals>
 					</execution>
 				</executions>
