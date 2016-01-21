@@ -1,10 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>ca.magex.build</groupId>
 	<artifactId>builder-assembly</artifactId>
 	<version>1.6.5-SNAPSHOT</version>
-	
+
 	<name>Builder Assembly</name>
 	<description>...</description>
 
@@ -14,13 +15,14 @@
 
 	<build>
 		<plugins>
+		
 			<plugin>
-			   <artifactId>maven-assembly-plugin</artifactId>
-			   <configuration>
-			     <descriptors>
-					 <descriptor>src/main/assembly/zip.xml</descriptor>
-			     </descriptors>
-			   </configuration>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptors>
+						<descriptor>src/main/assembly/zip.xml</descriptor>
+					</descriptors>
+				</configuration>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -30,7 +32,33 @@
 					</execution>
 				</executions>
 			</plugin>
+			
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<id>attach-artifacts</id>
+						<phase>package</phase>
+						<goals>
+							<goal>attach-artifact</goal>
+						</goals>
+						<configuration>
+							<artifacts>
+								<artifact>
+									<file>target/${project.artifactId}-${project.version}-config.zip</file>
+									<classifier>config</classifier>
+									<type>zip</type>
+								</artifact>
+							</artifacts>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			
 		</plugins>
+
 	</build>
 
 </project>
