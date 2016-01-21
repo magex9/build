@@ -3,7 +3,7 @@
 	
 	<groupId>ca.magex.build</groupId>
 	<artifactId>builder-exec-program</artifactId>
-	<version>1.7.1-SNAPSHOT</version>
+	<version>1.7.1</version>
 	
 	<name>Builder Exec Example</name>
 	<description>Execute another applicaiton</description>
