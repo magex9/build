@@ -6,5 +6,12 @@
 	<artifactId>builder-jar</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
+	
+	<name>Builder JAR</name>
+	<description>...</description>
+
+	<scm>
+		<developerConnection>scm:svn:https://github.com/magex9/build.git/trunk/builder-jar</developerConnection>
+	</scm>
 
 </project>
