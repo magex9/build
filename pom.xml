@@ -3,14 +3,14 @@
 	
 	<groupId>ca.magex.build</groupId>
 	<artifactId>builder-product</artifactId>
-	<version>1.5.2-SNAPSHOT</version>
+	<version>1.5.2</version>
 	<packaging>pom</packaging>
 	
 	<name>Builder Product</name>
 	<description>A complete suite of tools for testing out the maven build process.</description>
 
 	<scm>
-		<developerConnection>scm:svn:https://github.com/magex9/build.git/trunk</developerConnection>
+		<developerConnection>scm:svn:https://github.com/magex9/build.git/tags/builder-product-1.5.2</developerConnection>
 	</scm>
 
 	<modules>
