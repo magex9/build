@@ -8,16 +8,17 @@ fi
 
 svn checkout $SVNBASE/trunk $BUILD_WORK
 
-export MAVEN_OPTS="-Dmaven.repo.local=target/local-repo -DaltDeploymentRepository=release-repo::default::file:target/deploy-repo"
+#export MAVEN_OPTS="-Dmaven.repo.local=target/local-repo -DaltDeploymentRepository=release-repo::default::file:target/deploy-repo"
+export MAVEN_OPTS="-Dmaven.repo.local=/Users/magex/maven/local-repo -DaltDeploymentRepository=release-repo::default::file:/Users/magex/maven/deploy-repo"
 
 cd $BUILD_WORK
 pwd
+
 # Deploy
 mvn clean deploy 
 
 # Release it
-mvn --batch-mode release:prepare
+mvn --batch-mode release:prepare release:perform
 
-# Deploy the release
-#mvn release:perform
-
+# Site
+mvn site
