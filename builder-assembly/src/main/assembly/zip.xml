@@ -7,9 +7,6 @@
     <fileSet>
       <directory>src/main/config</directory>
       <outputDirectory></outputDirectory>
-      <includes>
-        <include>**/*.properties</include>
-      </includes>
     </fileSet>
   </fileSets>
 </assembly>
