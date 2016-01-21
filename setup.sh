@@ -36,7 +36,7 @@ mvn site
 
 # Create an archetype
 cd target
-mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-webapp -DgroupId=ca.magex.archetype -DartifactId=mywebapp -Dversion=1.0.0-SNAPSHOT
+mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-webapp -DgroupId=ca.magex.archetype -DartifactId=mywebapp -Dversion=1.0.0-SNAPSHOT -Dpackage=ca.magex.archetype
 
 # Zip up required content
 rm -rf $WORKSPACE/local-repo/ca
