@@ -3,7 +3,7 @@
 
 	<groupId>ca.magex.build</groupId>
 	<artifactId>builder-reports</artifactId>
-	<version>1.4-SNAPSHOT</version>
+	<version>1.6.0-SNAPSHOT</version>
 	
 	<name>Builder Reports</name>
 	<description>...</description>
