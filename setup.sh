@@ -26,13 +26,13 @@ pwd
 mvn clean deploy 
 
 # Release it
-#mvn --batch-mode release:prepare release:perform
+mvn --batch-mode release:prepare release:perform
 
 # Site
 #mvn site
 
 # Useful commands
-#mvn dependency:tree
+mvn dependency:tree
 
 # Zip up required content
 #rm -rf $WORKSPACE/local-repo/ca
