@@ -3,14 +3,14 @@
 	
 	<groupId>ca.magex.build</groupId>
 	<artifactId>builder-product</artifactId>
-	<version>1.7.0-SNAPSHOT</version>
+	<version>1.7.0</version>
 	<packaging>pom</packaging>
 	
 	<name>Builder Product</name>
 	<description>A complete suite of tools for testing out the maven build process.</description>
 
 	<scm>
-		<developerConnection>scm:svn:https://github.com/magex9/build.git/tags/builder-product-1.6.5</developerConnection>
+		<developerConnection>scm:svn:https://github.com/magex9/build.git/tags/builder-product-1.7.0</developerConnection>
 	</scm>
 
 	<modules>
