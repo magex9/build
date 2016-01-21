@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Readonly Example</title>
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="jumbotron">
+	<div class="container">
+		<h1>Readonly Form Example</h1>
+		<p>An example to show how an editor fieldset could be showing using definition list tags</p>
+	</div>
+</div>
+
+<div class="container">
+	
+	<p>One of the challenges i have found in building web applications with a large amount of data entry forms is making printable copy of the forms.  Many times text overflows outside of textareas and input fields, and only the selected options of mutliselect lists or checkbox lists should be shown.</p>
+	
+	<p>In the past I have always used a large number of div tags with specific styling, however after reading an article on <a href="http://www.onderhond.com/blog/dl-dd-dt">DL-DD-DT by Niels Matthijs</a>, I realized there were different ways to use the &gt;dl&lt; tag then putting all definitions in a single list.  In this example I have put each form field in its own definition list along with any other associated footnotes and messages about it.</p>
+	
+	<div class="row">
+		
+		<div class="col-md-4">
+			<h2>Input Fields</h2>
+
+			<div class="form-group">
+				<label>Name: </label>
+				<input name="name" type="text" class="form-control" value="Scott" />
+				<div class="message label label-danger">Error: This should be your full name</div>
+			</div>
+
+			<pre>&lt;div class="form-group col-md-4"&gt;
+ &lt;label&gt;Name: &lt;/label&gt;
+ &lt;input name="name" type="text" class="form-control" value="Scott" /&gt;
+ &lt;div class="message label label-danger"&gt;Error: This should be your full name&lt;/div&gt;
+&lt;/div&gt;</pre>
+		</div>
+		
+		<div class="col-md-4">
+			<h2>Div Containers</h2>
+
+			<div class="name-field">
+				<div class="field-label">Name: </div>
+				<div class="field-value form-control">Scott</div>
+				<div class="field-message danger-message">Error: This should be your full name</div>
+			</div>
+
+			<pre>&lt;div class="form-group col-md-4"&gt;
+ &lt;div class="field-label"&gt;Name: &lt;/div&gt;
+ &lt;div class="field-value"&gt;Scott&lt;/div&gt;
+ &lt;div class="field-message danger-message"&gt;Error: This should be your full name&lt;/div&gt;
+&lt;/div&gt;</pre>
+		</div>
+		
+		<div class="col-md-4">
+			<h2>Definition List</h2>
+
+			<dl class="name-field">
+				<dt class="definition-label">Name: </dt>
+				<dd class="definition-value form-control">Scott</dd>
+				<dt class="message-label message-danger">Error: </dt>
+				<dd class="message-description message-danger">This should be your full name</dd>
+			</dl>
+
+			<pre>&lt;dl class="name-field col-md-4"&gt;
+ &lt;dt class="definition-label"&gt;Name: &lt;/dt&gt;
+ &lt;dd class="definition-value form-control"&gt;Scott&lt;/dd&gt;
+ &lt;dt class="message-label message-danger"&gt;Error: &lt;/dt&gt;
+ &lt;dd class="message-description message-danger"&gt;This should be your full name&lt;/dd&gt;
+&lt;/dl&gt;</pre>
+		</div>
+		
+		<div class="col-md-12">
+			<p class="alert alert-info">The following examples show more in depth and real world examples of how this could be used if there were multiple forms and styles of fields all on a single page.</p>
+		</div>
+		
+	</div>
+	
+	<hr/>
+	
+	<div class="row">
+		<fieldset>
+		
+			<legend class="col-md-12">Person Name (Fields)</legend>
+	
+			<div class="form-group col-md-2">
+				<label>Salutation: </label>
+				<select class="form-control"><option>Mr</option></select>
+				<div class="message label label-danger">Error: This is an error message</div>
+			</div>
+	
+			<div class="form-group col-md-4">
+				<label>First Name: </label>
+				<input type="text" value="Scott" class="form-control" />
+			</div>
+	
+			<div class="form-group col-md-2">
+				<label>Middle Name: </label>
+				<input type="text" class="form-control" />
+			</div>
+	
+			<div class="form-group col-md-4">
+				<label>Last Name: </label>
+				<input type="text" value="Finlay" class="form-control" />
+			</div>
+			
+			<div class="form-group col-md-5 checkboxlist" style="clear: left">
+				<label>Roles: </label>
+				<div class="input-group">
+					<span class="input-group-addon">
+						<input type="checkbox" checked="checked" aria-label="role-a">
+					</span>
+					<span class="form-control">Role A</span>
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon">
+						<input type="checkbox" aria-label="role-a">
+					</span>
+					<span class="form-control">Role B</span>
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon">
+						<input type="checkbox" checked="checked" aria-label="role-a">
+					</span>
+					<span class="form-control">Role C</span>
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon">
+						<input type="checkbox" aria-label="role-a">
+					</span>
+					<span class="form-control">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt</span>
+				</div>
+			</div>
+			
+			<div class="form-group col-md-7">
+				<label>Notes: </label>
+				<textarea class="form-control" style="height: 200px;">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est.
+					
+Qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur
+					
+Fin</textarea>
+				<div class="message label label-info">Notification: There is a 2000 character limit</div>
+			</div>
+	
+		</fieldset>
+	</div>
+	
+	<hr />	
+		
+	<div class="row clearfix">
+		
+		<section>
+			<h3 class="col-md-12">Person Name (Readonly)</h3>
+			
+			<dl class="col-md-2">
+				<dt class="definition-label">Salutation: </dt>
+				<dd class="definition-value form-control">Mr.</dd>
+				<dt class="message-label message-danger">Error: </dt>
+				<dd class="message-description message-danger">This is an error message</dd>
+			</dl>
+			
+			<dl class="col-md-4">
+				<dt class="definition-label">First Name: </dt>
+				<dd class="definition-value form-control">Scott</dd>
+			</dl>
+		
+			<dl class="col-md-2">
+				<dt class="definition-label">Middle Name: </dt>
+				<dd class="definition-value form-control"></dd>
+			</dl>
+		
+			<dl class="col-md-4">
+				<dt class="definition-label">Last Name: </dt>
+				<dd class="definition-value form-control">Finlay</dd>
+			</dl>
+			
+			<dl class="col-md-5" style="clear: left">
+				<dt class="definition-label">Roles: </dt>
+				<dd class="definition-value form-control"><span class="value">Role A</span></dd>
+				<dd class="definition-value form-control"><span class="value">Role C</span></dd>
+			</dl>
+			
+			<dl class="form-group col-md-7">
+				<dt class="definition-label">Notes: </label></dt>
+				<dd class="definition-value form-control"><span class="value">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est.<br/>
+<br/>
+Qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Fin</span>
+				</dd>
+				<dt class="message-label message-info">Notification: </dt>
+				<dd class="message-description message-info">This does not seem to be English</dd>
+			</dl>
+			
+		</section>
+	</div>
+	
+	<hr />
+	
+	<div class="row with-controls clear-fix">
+		
+		<section>
+			<h3 class="col-md-12">Person Name (With Controls)</h3>
+			
+			<dl class="col-md-2">
+				<dt class="definition-label">Salutation: </dt>
+				<dd class="definition-value form-control">Mr.
+					<div class="actions btn-group">
+						<button type="button" class="btn btn-default">
+							<span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
+						</button><button type="button" class="btn btn-default">
+							<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+					</div>
+				</dd>
+				<dt class="message-label message-danger">Error: </dt>
+				<dd class="message-description message-danger">This is an error message</dd>
+			</dl>
+			
+			<dl class="col-md-4">
+				<dt class="definition-label">First Name: </dt>
+				<dd class="definition-value form-control">
+					<span class="value">Scott has a really long name that should wrap to the next line</span>
+					<div class="actions btn-group">
+						<button type="button" class="btn btn-default">
+							<span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
+						</button><button type="button" class="btn btn-default">
+							<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+					</div>
+				</dd>
+			</dl>
+		
+			<dl class="col-md-2">
+				<dt class="definition-label">Middle Name: </dt>
+				<dd class="definition-value form-control">
+					<span class="value">P</span>
+					<div class="actions btn-group">
+						<button type="button" class="btn btn-default">
+							<span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
+						</button><button type="button" class="btn btn-default">
+							<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+					</div>
+				</dd>
+			</dl>
+		
+			<dl class="col-md-4">
+				<dt class="definition-label">Last Name: </dt>
+				<dd class="definition-value form-control">
+					<span class="value">Finlay</span>
+					<div class="actions btn-group">
+						<button type="button" class="btn btn-default active">
+							<span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
+						</button><button type="button" class="btn btn-default">
+							<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+					</div>
+				</dd>
+			</dl>
+			
+			<dl class="col-md-5" style="clear: left">
+				<dt class="definition-label">Roles: </dt>
+				<dd class="definition-value form-control"><span class="value">Role A</span>
+					<div class="actions btn-group">
+						<button type="button" class="btn btn-default">
+							<span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
+						</button><button type="button" class="btn btn-default">
+							<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+					</div>
+				</dd>
+				<dd class="definition-value form-control">
+					<span class="value">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt</span>
+					<div class="actions btn-group">
+						<button type="button" class="btn btn-default danger">
+							<span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
+						</button><button type="button" class="btn btn-default">
+							<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+					</div>
+				</dd>
+			</dl>
+
+			<dl class="form-group col-md-7">
+				<dt class="definition-label">Notes: </label></dt>
+				<dd class="definition-value form-control"><span class="value">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est.<br/>
+<br/>
+Qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Fin</span>
+					<div class="actions btn-group">
+						<button type="button" class="btn btn-default">
+							<span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
+						</button><button type="button" class="btn btn-default">
+							<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+					</div>
+				</dd>
+				<dt class="message-label message-info">Notification: </dt>
+				<dd class="message-description message-info">This does not seem to be English</dd>
+			</dl>
+			
+		</section>
+	</div>
+
+</div>
+</body>
+
+<style>
+
+h2 {
+	color: #036;
+}
+
+hr {
+	height: 10px; 
+	background-color: #ddd;
+}
+
+dd.form-control,
+div.form-control {
+	cursor: no-drop;
+	background-color: #fcfcfc;
+}
+
+.form-control {
+	min-height: 34px;
+	height: auto;
+}
+
+.definition-value {
+	display: block;
+	position: relative;
+	float: left;
+	margin-bottom: 2px;
+	width: 100%;
+	min-height: 34px;
+	height: auto !important;
+	padding: 6px 12px 0 6px;
+}
+
+.with-controls .definition-value .value {
+	float: left;
+	display: block;
+	margin-bottom: 7px;
+}
+
+.definition-value .actions {
+	float: right;
+	margin-left: 0;
+	margin-right: -12px;
+	margin-top: -7px;
+}
+
+.definition-value button {
+	background-color: #eee;
+}
+
+.definition-value button:hover {
+	background-color: #ccc;
+}
+
+.checkboxlist .input-group {
+	margin-bottom: 2px;
+}
+
+button.active {
+	background-color: #afa !important;
+	color: green !important;
+}
+
+button.danger {
+	background-color: #faa !important;
+	color: red !important;
+}
+
+.field-action-label {
+	display: none;
+}
+
+.field-action-buttons {
+	display: block;
+	position: relative;
+	float: right;
+	width: 30px;
+}
+
+.message-danger {
+	background-color: #d9534f;
+	color: white;
+	display: inline;
+	font-size: 75%;
+	font-weight: bold;
+	padding: 3px;
+	white-space: nowrap;
+}
+
+.message-info {
+	background-color: #5bc0de;
+	color: white;
+	display: inline;
+	font-size: 75%;
+	font-weight: bold;
+	padding: 3px;
+	white-space: nowrap;
+}
+
+.message-label {
+	padding-left: 5px;
+	padding-right: 0;
+}
+
+.message-description {
+	padding-left: 0;
+	padding-right: 5px;
+}
+
+.field-label {
+	font-weight: bold;
+}
+
+.field-message {
+	background-color: #d9534f;
+	color: white;
+	display: inline;
+	font-size: 75%;
+	font-weight: bold;
+	padding: 3px;
+	white-space: nowrap;
+}
+
+.name-field {
+	margin-bottom: 10px;
+}
+
+</style>
+
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</html>

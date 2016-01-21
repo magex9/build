@@ -25,5 +25,6 @@ mvn --batch-mode release:prepare release:perform
 mvn site
 
 # Zip up required content
+rm -rf $WORKSPACE/local-repo/ca
 tar -c $WORKSPACE/local-repo | gzip > $WORKSPACE/maven-central.tar.gz
 
