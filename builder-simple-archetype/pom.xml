@@ -3,13 +3,13 @@
 	
 	<groupId>ca.magex.build</groupId>
 	<artifactId>builder-simple-archetype</artifactId>
-	<version>1.3-SNAPSHOT</version>
+	<version>1.3</version>
 	
 	<name>Maven Sample Archetype</name>
 	<description>Archetype for maven services</description>
 	
 	<scm>
-		<developerConnection>scm:svn:https://github.com/magex9/build.git/trunk/builder-simple-archetype</developerConnection>
+		<developerConnection>scm:svn:https://github.com/magex9/build.git/tags/builder-product-1.5.6/builder-simple-archetype</developerConnection>
 	</scm>
 	
 </project>

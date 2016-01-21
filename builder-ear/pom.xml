@@ -3,14 +3,14 @@
 
 	<groupId>ca.magex.build</groupId>
 	<artifactId>builder-ear</artifactId>
-	<version>1.2-SNAPSHOT</version>
+	<version>1.2</version>
 	<packaging>ear</packaging>
 	
 	<name>Builder EAR</name>
 	<description>...</description>
 
 	<scm>
-		<developerConnection>scm:svn:https://github.com/magex9/build.git/trunk/builder-ear</developerConnection>
+		<developerConnection>scm:svn:https://github.com/magex9/build.git/tags/builder-product-1.5.6/builder-ear</developerConnection>
 	</scm>
 
 </project>
