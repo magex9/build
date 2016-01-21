@@ -3,14 +3,14 @@
 
 	<groupId>ca.magex.build</groupId>
 	<artifactId>builder-info-plugin</artifactId>
-	<version>1.6.1-SNAPSHOT</version>
+	<version>1.6.1</version>
 	<packaging>maven-plugin</packaging>
 
 	<name>Builder Info Plugin</name>
 	<description>...</description>
 
 	<scm>
-		<developerConnection>scm:svn:https://github.com/magex9/build.git/trunk/builder-info-plugin</developerConnection>
+		<developerConnection>scm:svn:https://github.com/magex9/build.git/tags/builder-product-1.6.1/builder-info-plugin</developerConnection>
 	</scm>
 
 	<dependencies>
