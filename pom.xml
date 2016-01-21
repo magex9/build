@@ -16,6 +16,7 @@
 	<modules>
 		<module>builder-master-pom</module>
 		<module>builder-simple-archetype</module>
+		<module>builder-info-plugin</module>
 		<module>builder-jar</module>
 		<module>builder-war</module>
 		<module>builder-ear</module>
