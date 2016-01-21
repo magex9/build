@@ -3,14 +3,14 @@
 	
 	<groupId>ca.magex.build</groupId>
 	<artifactId>builder-master-pom</artifactId>
-	<version>1.5.2</version>
+	<version>1.5.3-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	
 	<name>Master Pom</name>
 	<description>Builds/Contains all modules</description>
 
         <scm>
-                <developerConnection>scm:svn:https://github.com/magex9/build.git/tags/builder-product-1.5.2/master-pom</developerConnection>
+                <developerConnection>scm:svn:https://github.com/magex9/build.git/trunk/master-pom</developerConnection>
         </scm>
 
 	
