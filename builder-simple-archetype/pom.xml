@@ -3,7 +3,7 @@
 	
 	<groupId>ca.magex.build</groupId>
 	<artifactId>builder-simple-archetype</artifactId>
-	<version>1.6.5</version>
+	<version>1.7.0-SNAPSHOT</version>
 	
 	<name>Maven Sample Archetype</name>
 	<description>Archetype for maven services</description>
