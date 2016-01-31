@@ -3,13 +3,13 @@
 
 	<groupId>ca.magex.build</groupId>
 	<artifactId>builder-assembly</artifactId>
-	<version>1.7.3</version>
+	<version>1.7.4-SNAPSHOT</version>
 	
 	<name>Builder Assembly</name>
 	<description>...</description>
 
 	<scm>
-		<developerConnection>scm:svn:https://github.com/magex9/build.git/tags/builder-product-1.7.3/builder-assembly</developerConnection>
+		<developerConnection>scm:svn:https://github.com/magex9/build.git/tags/builder-product-1.6.5/builder-assembly</developerConnection>
 	</scm>
 
 	<build>
