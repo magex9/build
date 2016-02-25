@@ -47,6 +47,13 @@
 			<artifactId>jacoco-maven-plugin</artifactId>
 			<version>0.7.6.201602180812</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.jena</groupId>
+			<artifactId>apache-jena-libs</artifactId>
+			<version>3.0.1</version>
+			<type>pom</type>
+		</dependency>
 
 		<!-- spring dependencies -->
 	    <dependency>
