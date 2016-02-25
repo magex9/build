@@ -23,6 +23,7 @@
 		<module>builder-ear</module>
 		<module>builder-exec-program</module>
 		<module>builder-reporting</module>
+		<module>builder-deps</module>
 	</modules>
 	
 </project>

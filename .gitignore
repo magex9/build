@@ -3,5 +3,7 @@ target/
 .project
 .classpath
 .settings/
+.metadata/
+.recommenders/
 .DS_Store
 *.zip
