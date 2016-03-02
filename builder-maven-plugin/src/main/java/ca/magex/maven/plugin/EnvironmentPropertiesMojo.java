@@ -1,7 +1,11 @@
 package ca.magex.maven.plugin;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Date;
+import java.util.Map;
+import java.util.Properties;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
@@ -9,14 +13,9 @@ import org.apache.maven.plugins.annotations.Component;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.project.MavenProject;
 import org.apache.maven.project.MavenProjectHelper;
-import org.codehaus.plexus.util.FileUtils;
 
-/**
- * Attach information to every jar file.
- *
- */
-@Mojo(name = "attach")
-public class BuildInfoMojo extends AbstractMojo {
+@Mojo(name = "env-props")
+public class EnvironmentPropertiesMojo extends AbstractMojo {
 
 	@Component
 	protected MavenProject project;
@@ -27,13 +26,16 @@ public class BuildInfoMojo extends AbstractMojo {
 	public void execute() throws MojoExecutionException {
 		try {
 			new File("target").mkdir();
-			FileUtils.fileWrite("target/build-info.properties", "env=value");
+			File file = new File("target/build-info.properties");
+			Properties properties = new Properties();
+			for (Map.Entry<String, String> entry : System.getenv().entrySet()) {
+				properties.setProperty(entry.getKey(), entry.getValue());
+			}
+			properties.store(new FileOutputStream(file), "Generated on " + new Date());
+			projectHelper.attachArtifact(project, "props", "env", file);
 		} catch (IOException e) {
 			throw new MojoExecutionException("Error creating file", e);
 		}
-		
-		projectHelper.attachArtifact(project, "props", "build-info", new File("target/build-info.properties"));
-
 	}
 	
 }
