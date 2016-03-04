@@ -2,6 +2,7 @@ package ca.magex.maven.model;
 
 import java.io.File;
 import java.io.OutputStream;
+import java.net.URI;
 import java.util.List;
 
 /**
@@ -110,7 +111,7 @@ public interface MavenRepository {
 	 * 
 	 * @return
 	 */
-	String getUrl();
+	String getBaseUrl();
 
 	/**
 	 * Get the name of this repository
