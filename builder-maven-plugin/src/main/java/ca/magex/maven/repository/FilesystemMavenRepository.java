@@ -2,9 +2,11 @@ package ca.magex.maven.repository;
 
 import java.io.File;
 import java.io.OutputStream;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.List;
 
-import ca.magex.maven.exceptions.BuilderException;
+import ca.magex.maven.exceptions.MavenException;
 import ca.magex.maven.model.Gav;
 import ca.magex.maven.model.MavenRepository;
 
@@ -18,7 +20,7 @@ public class FilesystemMavenRepository implements MavenRepository {
 	
 	public FilesystemMavenRepository(File basedir) {
 		if (!basedir.exists() || !basedir.isDirectory())
-			throw new BuilderException("Base directory does not exist: " + basedir);
+			throw new MavenException("Base directory does not exist: " + basedir);
 		this.basedir = basedir;
 	}
 
@@ -72,12 +74,27 @@ public class FilesystemMavenRepository implements MavenRepository {
 		return null;
 	}
 
-	public String getUrl() {
-		// TODO Auto-generated method stub
+	public String getBaseUrl() {
+		return basedir.getAbsolutePath();
+	}
+	
+	public File getFile(Gav gav) {
 		return null;
 	}
 
+	public URI getURI(Gav gav) {
+		try {
+			return new URI(getFile(gav).getAbsolutePath());
+		} catch (URISyntaxException e) {
+			throw new MavenException("Unable to get the root uri: " + basedir.getAbsolutePath(), e);
+		}
+	}
+
 	public String getRepoId() {
+		return basedir.getName();
+	}
+
+	public List<String> findDirectories(String baseDir) {
 		// TODO Auto-generated method stub
 		return null;
 	}

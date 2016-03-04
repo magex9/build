@@ -14,7 +14,7 @@ public class HttpMavenRepository implements MavenRepository {
 		return null;
 	}
 
-	public List<String> findGroupIds() {
+	public List<String> findDirectories(String baseDir) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -44,7 +44,7 @@ public class HttpMavenRepository implements MavenRepository {
 		return null;
 	}
 
-	public boolean contains(Gav pom) {
+	public boolean contains(Gav gav) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -59,7 +59,7 @@ public class HttpMavenRepository implements MavenRepository {
 		return null;
 	}
 
-	public String getUrl() {
+	public String getBaseUrl() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -68,5 +68,7 @@ public class HttpMavenRepository implements MavenRepository {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 
 }
