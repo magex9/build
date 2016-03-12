@@ -34,6 +34,10 @@ mvn site
 # Useful commands
 echo Display a dependency tree
 mvn dependency:tree 
+echo Download the sources plugin
+mvn dependency:sources
+echo Download the javadocs
+mvn dependency:resolve -Dclassifier=javadoc
 echo Download the eclipse plugin
 mvn eclipse:eclipse 
 echo Download the findbugs plugin
