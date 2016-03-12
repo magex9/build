@@ -1,6 +1,4 @@
 #!/bin/sh
-
-export SVNBASE="https://github.com/magex9/build.git"
 echo Using svn base: $SVNBASE
 
 echo "Checking for $SVNBASE/trunk"
