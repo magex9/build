@@ -1,8 +1,7 @@
 package ca.magex.maven.model;
 
 import java.io.File;
-import java.io.OutputStream;
-import java.net.URI;
+import java.io.InputStream;
 import java.util.List;
 
 /**
@@ -24,15 +23,6 @@ public interface MavenRepository {
 	 * @return
 	 */
 	List<String> findAllGroupIds();
-
-	/**
-	 * Get a list of all the group directory names under the given base
-	 * directory.
-	 * 
-	 * @param baseDir
-	 * @return
-	 */
-	List<String> findDirectories(String baseDir);
 
 	/**
 	 * Find all of the artifact id's for a given group
@@ -72,20 +62,21 @@ public interface MavenRepository {
 	Gav findArtifact(String groupId, String artifactId, String version);
 
 	/**
-	 * Get a list of all the extra classifier artifacts for a given group,
-	 * artifact and version
+	 * Get a list of all the artifacts for a given group, artifact and version.
+	 * This list will include the pom, main artifact and any additional
+	 * artifacts with classifiers.
 	 * 
 	 * @param groupId
 	 * @param artifactId
 	 * @param version
 	 * @return
 	 */
-	List<Gav> findClassifiers(String groupId, String artifactId, String version);
+	List<Gav> findArtifacts(String groupId, String artifactId, String version);
 
 	/**
 	 * Check to see if this repository contains the given gav
 	 * 
-	 * @param pom
+	 * @param gav
 	 * @return
 	 */
 	boolean contains(Gav gav);
@@ -99,12 +90,12 @@ public interface MavenRepository {
 	void download(Gav gav, File file);
 
 	/**
-	 * Get an output stream of a specified gav
+	 * Get an input stream of a specified gav
 	 * 
 	 * @param gav
 	 * @return
 	 */
-	OutputStream read(Gav gav);
+	InputStream read(Gav gav);
 
 	/**
 	 * Get the root url for the implementation

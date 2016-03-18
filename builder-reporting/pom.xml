@@ -144,27 +144,33 @@
 			<artifactId>transactions-hibernate4</artifactId>
 			<version>4.0.0</version>
 		</dependency>
-
+		
 		<!-- testing dependencies -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 		</dependency>
-
+		
 		<dependency>
 			<groupId>org.jacoco</groupId>
 			<artifactId>jacoco-maven-plugin</artifactId>
 			<version>0.7.6.201602180812</version>
 		</dependency>
-
+		
 		<dependency>
 			<groupId>org.apache.jena</groupId>
 			<artifactId>apache-jena-libs</artifactId>
 			<version>3.0.1</version>
 			<type>pom</type>
 		</dependency>
-
+		
+		<dependency>
+			<groupId>com.lowagie</groupId>
+			<artifactId>itext</artifactId>
+			<version>4.2.2</version>
+		</dependency>
+		
 		<!-- spring dependencies -->
 		<dependency>
 			<groupId>io.spring.platform</groupId>

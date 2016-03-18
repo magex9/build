@@ -1,7 +1,7 @@
 package ca.magex.maven.repository;
 
 import java.io.File;
-import java.io.OutputStream;
+import java.io.InputStream;
 import java.util.List;
 
 import ca.magex.maven.model.Gav;
@@ -39,7 +39,7 @@ public class HttpMavenRepository implements MavenRepository {
 		return null;
 	}
 
-	public List<Gav> findClassifiers(String groupId, String artifactId, String version) {
+	public List<Gav> findArtifacts(String groupId, String artifactId, String version) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -54,7 +54,7 @@ public class HttpMavenRepository implements MavenRepository {
 		
 	}
 
-	public OutputStream read(Gav gav) {
+	public InputStream read(Gav gav) {
 		// TODO Auto-generated method stub
 		return null;
 	}

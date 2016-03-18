@@ -42,7 +42,7 @@ public class UploadMavenRepositoryMojo extends AbstractMavenMojo {
 				for (String version : sourceRepo.findVersions(groupId, artifactId)) {
 					Gav pom = sourceRepo.findPom(groupId, artifactId, version);
 					Gav file = sourceRepo.findArtifact(groupId, artifactId, version);
-					List<Gav> classifiers = sourceRepo.findClassifiers(groupId, artifactId, version);
+					List<Gav> classifiers = sourceRepo.findArtifacts(groupId, artifactId, version);
 					upload(pom, file, classifiers, sourceRepo, destRepo);
 				}
 			}
