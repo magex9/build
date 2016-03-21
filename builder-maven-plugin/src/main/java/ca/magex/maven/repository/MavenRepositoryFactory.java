@@ -9,7 +9,7 @@ public class MavenRepositoryFactory {
 		if (conn == null) {
 			throw new MavenException("Connection string cannot be null");
 		} else if (conn.startsWith("http://")) {
-			return new HttpMavenRepository();
+			return new HttpMavenRepository("http", conn);
 		} else if (conn.startsWith("file://")) {
 			return new FilesystemMavenRepository(conn.substring("file://".length()));
 		}

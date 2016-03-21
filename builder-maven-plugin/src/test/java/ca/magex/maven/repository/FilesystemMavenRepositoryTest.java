@@ -7,11 +7,11 @@ import ca.magex.maven.model.MavenRepository;
 
 public class FilesystemMavenRepositoryTest {
 
-	private static final String basedir = "/Users/magex/workspace/maven/local-repo";
+	public static final String LOCAL_REPO = "/Users/magex/workspace/maven/local-repo";
 	
 	@Test
 	public void testGetGroupIds() throws Exception {
-		MavenRepository repo = new FilesystemMavenRepository(basedir);
+		MavenRepository repo = new FilesystemMavenRepository(LOCAL_REPO);
 		for (String artifacts : repo.findVersions("org.apache.maven.plugins", "maven-jar-plugin")) {
 			System.out.println(artifacts);
 		}

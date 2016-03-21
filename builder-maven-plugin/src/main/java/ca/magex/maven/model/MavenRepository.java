@@ -98,6 +98,13 @@ public interface MavenRepository {
 	InputStream read(Gav gav);
 
 	/**
+	 * Get the text content from a specified gav
+	 * @param gav
+	 * @return
+	 */
+	String content(Gav gav);
+
+	/**
 	 * Get the root url for the implementation
 	 * 
 	 * @return

@@ -1,11 +1,12 @@
 package ca.magex.maven.repository;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.Charset;
@@ -14,13 +15,10 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.io.output.ByteArrayOutputStream;
-
 import ca.magex.maven.exceptions.MavenException;
 import ca.magex.maven.model.Gav;
 import ca.magex.maven.model.MavenRepository;
 
-@SuppressWarnings("resource")
 public class FilesystemMavenRepository implements MavenRepository {
 
 	private final File basedir;
@@ -114,7 +112,7 @@ public class FilesystemMavenRepository implements MavenRepository {
 	private Gav parse(String groupId, String artifactId, String version, String filename) {
 		if (filename.endsWith(".sha1"))
 			return null;
-		Pattern p = Pattern.compile(artifactId + "-" + version + "(-[^\\.]+)?.(.*)");
+		Pattern p = Pattern.compile(artifactId + "-" + version + "(-[^\\.]+)?\\.([^\\.]+)");
 		Matcher m = p.matcher(filename);
 		if (m.matches()) {
 			String classifier = m.group(1);
@@ -129,13 +127,10 @@ public class FilesystemMavenRepository implements MavenRepository {
 	}
 	
 	public String content(Gav gav) {
-		try {
-			ByteArrayOutputStream os = new ByteArrayOutputStream();
-			os.write(read(gav));
-			return new String(os.toByteArray(), Charset.defaultCharset());
-		} catch (IOException e) {
-			throw new MavenException("Unable to get content: " + gav.toString(), e);
-		}
+		ByteArrayOutputStream os = new ByteArrayOutputStream();
+		InputStream is = read(gav);
+		stream(is, os);
+		return new String(os.toByteArray(), Charset.defaultCharset());
 	}
 
 	public void download(Gav gav, File file) {
@@ -144,6 +139,14 @@ public class FilesystemMavenRepository implements MavenRepository {
 		try {
 			FileOutputStream os = new FileOutputStream(file);
 			InputStream is = read(gav);
+			stream(is, os);
+		} catch (Exception e) {
+			throw new MavenException("Unable to download file: " + gav.toString() + " to " + file.getAbsolutePath(), e);
+		}
+	}
+	
+	private void stream(InputStream is, OutputStream os) {
+		try {
 			byte[] buffer = new byte[1024];
 			int len = is.read(buffer);
 			while (len != -1) {
@@ -151,7 +154,7 @@ public class FilesystemMavenRepository implements MavenRepository {
 			    len = is.read(buffer);
 			}
 		} catch (Exception e) {
-			throw new MavenException("Unable to download file: " + gav.toString() + " to " + file.getAbsolutePath(), e);
+			throw new MavenException("Unable to stream input to output", e);
 		}
 	}
 	
