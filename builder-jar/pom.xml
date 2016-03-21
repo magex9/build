@@ -23,7 +23,7 @@
 					<execution>
 						<phase>compile</phase>
 						<goals>
-							<goal>attach</goal>
+							<goal>attachments</goal>
 						</goals>
 					</execution>
 				</executions>
