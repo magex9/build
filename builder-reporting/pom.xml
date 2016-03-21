@@ -3,13 +3,13 @@
 
 	<groupId>ca.magex.build</groupId>
 	<artifactId>builder-reporting</artifactId>
-	<version>1.7.5</version>
+	<version>1.7.6-SNAPSHOT</version>
 
 	<name>Builder Reports</name>
 	<description>Build a maven site and also get a report of out of dates plugins</description>
 
 	<scm>
-		<developerConnection>scm:svn:https://github.com/magex9/build.git/tags/builder-product-1.7.5/builder-reporting</developerConnection>
+		<developerConnection>scm:svn:https://github.com/magex9/build.git/tags/builder-product-1.6.5/builder-reporting</developerConnection>
 	</scm>
 
 	<dependencies>
