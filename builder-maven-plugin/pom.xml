@@ -6,7 +6,7 @@
 	<version>1.7.6-SNAPSHOT</version>
 	<packaging>maven-plugin</packaging>
 
-	<name>Builder Info Plugin</name>
+	<name>Builder Maven Plugin</name>
 	<description>...</description>
 
 	<scm>
