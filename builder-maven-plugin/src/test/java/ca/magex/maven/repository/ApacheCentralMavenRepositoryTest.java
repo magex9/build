@@ -12,7 +12,7 @@ import ca.magex.maven.model.Gav;
 import ca.magex.maven.model.MavenRepository;
 import ca.magex.maven.repository.FilesystemMavenRepository;
 
-public class ApachecentralMavenRepositoryTest {
+public class ApacheCentralMavenRepositoryTest {
 
 	public static void main(String[] args) throws Exception {
 		//ApacheMavenRepository repo = new ApacheMavenRepository();

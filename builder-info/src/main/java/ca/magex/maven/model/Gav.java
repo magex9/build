@@ -1,6 +1,6 @@
 package ca.magex.maven.model;
 
-import org.codehaus.plexus.util.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * A pointer reference to a maven artifact. The group, artifact and version are
