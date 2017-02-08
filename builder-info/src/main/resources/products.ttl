@@ -63,10 +63,3 @@ gav(cmb:war)		gav:type					'war'					.
 gav(cmb:war)		product:module				gav(cmb:product)		.
 gav(cmb:war)		product:order				2						.
 
-select distinct ?groupId ?artifactId ?version {
-	?gavRef	gav:artifactId ?artifactId		.
-	?gavRef	product:module ?productRef		.
-	?productRef	gav:groupId ?groupId		.
-	?productRef gav:version ?version		.
-} order by ?groupId ?artifactId ?version
-

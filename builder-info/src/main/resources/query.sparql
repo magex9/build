@@ -1,0 +1,7 @@
+
+select distinct ?groupId ?artifactId ?version {
+	?gavRef	gav:artifactId ?artifactId		.
+	?gavRef	product:module ?productRef		.
+	?productRef	gav:groupId ?groupId		.
+	?productRef gav:version ?version		.
+} order by ?groupId ?artifactId ?version
