@@ -1,0 +1,23 @@
+<http://magex.ca/data/mid/FNPWVoA5gc> <http://data.magex.ca/common/topic/name> 'Name' .
+<http://magex.ca/data/mid/kSMZoX0LW9> <http://data.magex.ca/common/topic/name> 'Success' .
+<http://magex.ca/data/mid/kSMZoX0LW9> <http://data.magex.ca/common/type/code> 'success' .
+<http://magex.ca/data/mid/3n88ErGsSK> <http://data.magex.ca/common/topic/name> 'Error' .
+<http://magex.ca/data/mid/3n88ErGsSK> <http://data.magex.ca/common/type/code> 'error' .
+<http://magex.ca/data/mid/js30TwtJSQ> <http://data.magex.ca/common/topic/name> 'Warning' .
+<http://magex.ca/data/mid/js30TwtJSQ> <http://data.magex.ca/common/type/code> 'warn' .
+<http://magex.ca/data/mid/XoQaoqNW7D> <http://data.magex.ca/common/topic/name> 'Notification' .
+<http://magex.ca/data/mid/XoQaoqNW7D> <http://data.magex.ca/common/type/code> 'info' .
+<http://magex.ca/data/mid/RKhVm3BKFX> <http://data.magex.ca/common/topic/name> 'Canada' .
+<http://magex.ca/data/mid/RKhVm3BKFX> <http://data.magex.ca/location/country/code> 'ca' .
+<http://magex.ca/data/mid/cYifuBA0MQ> <http://data.magex.ca/common/topic/name> 'Ottawa' .
+<http://magex.ca/data/mid/cYifuBA0MQ> <http://data.magex.ca/location/city/code> 'yow' .
+<http://magex.ca/data/mid/rOVz63NTFH> <http://data.magex.ca/location/address/street> '1 Main St' .
+<http://magex.ca/data/mid/rOVz63NTFH> <http://data.magex.ca/location/address/city> <http://magex.ca/data/mid/cYifuBA0MQ> .
+<http://magex.ca/data/mid/Lky6mqkx3r> <http://data.magex.ca/common/topic/name> 'Scott Finlay' .
+<http://magex.ca/data/mid/Lky6mqkx3r> <http://data.magex.ca/people/person/firstName> 'Scott' .
+<http://magex.ca/data/mid/Lky6mqkx3r> <http://data.magex.ca/people/person/lastName> 'Finlay' .
+<http://magex.ca/data/mid/Lky6mqkx3r> <http://data.magex.ca/people/person/homeAddress> <http://magex.ca/data/mid/4rtykdVPAN> .
+<http://magex.ca/data/mid/hDJUDNE3Zq> <http://data.magex.ca/common/topic/name> 'Fiona Finlay' .
+<http://magex.ca/data/mid/hDJUDNE3Zq> <http://data.magex.ca/people/person/firstName> 'Fiona' .
+<http://magex.ca/data/mid/hDJUDNE3Zq> <http://data.magex.ca/people/person/lastName> 'Finlay' .
+<http://magex.ca/data/mid/hDJUDNE3Zq> <http://data.magex.ca/people/person/homeAddress> <http://magex.ca/data/mid/4rtykdVPAN> .

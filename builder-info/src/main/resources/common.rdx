@@ -1,0 +1,49 @@
+# Rich Data eXpanded Format
+
+# Sample turtle file for the builder project
+# Topic - A topic should be encoded as
+# - base58(md5(ref://domain/type/common_name)).substring(0, 10);
+# - subjects should always be shown as their mid (machine id)
+
+# Standard types
+# There are two main types of nodes, topics and complex value types
+# A topic has all of the attributes of a CVT, but it must have the 
+# common/topic/name property set.  This gives the attribute some meaning
+@prefix common:			<http://data.magex.ca/common/topic/>			.
+common:name				common:name				'Name'					.
+
+# A set of common types that all other databases can use for vocaulary
+@prefix type:			<http://data.magex.ca/common/type/>				.
+
+type:success			common:name				'Success'				.
+type:success			type:code				'success'				.
+type:error				common:name				'Error'					.
+type:error				type:code				'error'					.
+type:warning			common:name				'Warning'				.
+type:warning			type:code				'warn'					.
+type:info				common:name				'Notification'			.
+type:info				type:code				'info'					.
+
+@prefix country:		<http://data.magex.ca/location/country/>		.
+country:ca				common:name				'Canada'				.
+country:ca				country:code			'ca'					.
+
+@prefix city:			<http://data.magex.ca/location/city/>			.
+city:ottawa				common:name				'Ottawa'				.
+city:ottawa				city:code				'yow'					.
+
+@prefix address:		<http://data.magex.ca/location/address/>		.
+address:1_main_ottawa	address:street			'1 Main St'				.
+address:1_main_ottawa	address:city			city:ottawa				.
+
+@prefix person:			<http://data.magex.ca/people/person/>			.
+person:scott@test.com	common:name				'Scott Finlay'			.
+person:scott@test.com	person:firstName		'Scott'					.
+person:scott@test.com	person:lastName			'Finlay'				.
+person:scott@test.com	person:homeAddress		location:1_main_ottawa	.
+
+person:fiona@test.com	common:name				'Fiona Finlay'			.
+person:fiona@test.com	person:firstName		'Fiona'					.
+person:fiona@test.com	person:lastName			'Finlay'				.
+person:fiona@test.com	person:homeAddress		location:1_main_ottawa	.
+

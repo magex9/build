@@ -1,0 +1,88 @@
+# Sample turtle file for the builder project
+# Topic - A topic should be encoded as
+# - base58(md5(ref://domain/type/common_name)).substring(0, 10);
+# - subjects should always be shown as their mid (machine id)
+
+# Standard types
+@prefix common:			<http://magex.ca/data/common/topic/>			.
+@prefix type:			<http://magex.ca/data/common/type/>				.
+
+@prefix product: 		<http://magex.ca/data/project/product/>			.
+@prefix parent: 		<http://magex.ca/data/project/parent/>			.
+@prefix gav: 			<http://magex.ca/data/project/gav/>				.
+@prefix projectType:	<http://magex.ca/data/project/type/>			.
+@prefix dependency:		<http://magex.ca/data/project/dependency/>		.
+@prefix depScope:		<http://magex.ca/data/project/dependencyScope/>	.
+@prefix plugin:			<http://magex.ca/data/project/plugin/>			.
+@prefix svn:			<http://magex.ca/data/project/svn/>				.
+
+type(success)		common:name					'Success'				.
+type(success)		type:code					'success'				.
+type(error)			common:name					'Error'					.
+type(error)			type:code					'error'					.
+type(warning)		common:name					'Warning'				.
+type(warning)		type:code					'warn'					.
+type(info)			common:name					'Notification'			.
+type(info)			type:code					'info'					.
+
+depScope(compile)	common:name					'Compile'				.
+depScope(compile)	depScope:code				'compile'				.
+projectType(pom)	common:name					'Project Object Model'	.
+projectType(pom)	projectType:code			'pom'					.
+projectType(maven-plugin)	common:name			'Maven Plugin'			.
+projectType(maven-plugin)	projectType:code	'maven-plugin'			.
+projectType(jar)	common:name					'Java Archive'			.
+projectType(jar)	projectType:code			'jar'					.
+projectType(war)	common:name					'Web Archive'			.
+projectType(war)	projectType:code			'war'					.
+
+gav(cmb:product)	common:name					'Builder Product'		.
+gav(cmb:product)	common:description			'A complete suite...'	.
+gav(cmb:product)	gav:groupId					'ca.magex.build'		.
+gav(cmb:product)	gav:artifactId				'builder-product'		.
+gav(cmb:product)	gav:version					'1.7.6'					.
+gav(cmb:product)	gav:type					projectType(pom)					.
+gav(cmb:product)	svn:connection				'https://github/...'	.
+gav(cmb:product)	product:developer			person:scott@magex.ca	.
+gav(cmb:product)	product:developer			person:jonny@magex.ca	.
+gav(cmb:product)	product:gav					gav(cmb:bp)			.
+
+gav(cmb:plugin)		common:name					'Builder Services'		.
+gav(cmb:plugin)		gav:groupId					'ca.magex.build'		.
+gav(cmb:plugin)		gav:artifactId				'builder-maven-plugin'	.
+gav(cmb:plugin)		gav:version					'1.7.6'					.
+gav(cmb:plugin)		gav:type					projectType(maven-plugin)			.
+gav(cmb:plugin)		product:module				gav(cmb:product)		.
+gav(cmb:plugin)		product:order				0						.
+
+gav(oam:core)		gav:groupId					'org.apache.maven'		.
+gav(oam:core)		gav:artifactId				'maven-core'			.
+gav(oam:core)		gav:version					'3.3.9'					.
+
+dependency(gav(cmb:plugin),gav(oam:core))	dependency:project	gav(cmb:plugin)		.
+dependency(gav(cmb:plugin),gav(oam:core))	dependency:library	gav(oam:core)		.
+dependency(gav(cmb:plugin),gav(oam:core))	dependency:scope	depScope(compile)	.
+
+transitivie(gav(cmb:plugin),gav(junit:ju)	dependency:transitivie		gav(junit:junit)	.
+
+gav(cmb:jar)		common:name					'Builder Services'		.
+gav(cmb:jar)		gav:groupId					'ca.magex.build'		.
+gav(cmb:jar)		gav:artifactId				'builder-jar'			.
+gav(cmb:jar)		gav:version					'1.7.6'					.
+gav(cmb:jar)		gav:type					projectType(jar)		.
+gav(cmb:jar)		product:module				gav(cmb:product)		.
+gav(cmb:jar)		product:order				1						.
+
+plugin(cmb:jar_cmb:plugin)		plugin:project		gav(cmb:jar)			.
+plugin(cmb:jar_cmb:plugin)		plugin:plugin		gav(cmb:plugin)			.
+plugin(cmb:jar_cmb:plugin)		plugin:phase		pluginPhase:compile		.
+plugin(cmb:jar_cmb:plugin)		plugin:goal			'attachments'			.
+
+gav(cmb:war)		common:name					'Builder Services'		.
+gav(cmb:war)		gav:groupId					'ca.magex.build'		.
+gav(cmb:war)		gav:artifactId				'builder-war'			.
+gav(cmb:war)		gav:version					'1.7.6'					.
+gav(cmb:war)		gav:type					projectType(war)		.
+gav(cmb:war)		product:module				gav(cmb:product)		.
+gav(cmb:war)		product:order				2						.
+
