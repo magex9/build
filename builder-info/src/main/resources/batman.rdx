@@ -1,0 +1,155 @@
+# Rich Data eXpanded Format
+
+@prefix topic:			<http://data.magex.ca/common/topic/>				.
+@prefix movie:			<http://data.magex.ca/film/movie/>					.
+@prefix person:			<http://data.magex.ca/people/person/>				.
+@prefix filmCharacter:	<http://data.magex.ca/film/character/>				.
+
+movie:batman				topic:name			'Batman'					.
+movie:batman				movie:released		1989						.
+movie:batman				movie:imdb			'tt0096895'					.
+
+movie:batman_returns		topic:name			'Batman Returns'			.
+movie:batman_returns		movie:released		1992						.
+movie:batman_returns		movie:imdb			'tt0103776'					.
+
+movie:batman_begins			topic:name			'Batman Begins'				.
+movie:batman_begins			movie:released		2005						.
+movie:batman_begins			movie:imdb			'tt0372784'					.
+
+movie:batman_dark_night		topic:name			'The Dark Knight'			.
+movie:batman_dark_night		movie:released		2008						.
+movie:batman_dark_night		movie:imdb			'tt0468569'					.
+
+personType:male				topic:name			'Male'						.
+personType:female			topic:name			'Female'					.
+personType:fictional		topic:name			'Fictional'					.
+
+person:christian_bale		topic:name			'Christian Bale'			.
+person:christian_bale		person:type			personType:male				.
+person:danny_devito			topic:name			'Danny DeVito'				.
+person:danny_devito			person:type			personType:male				.
+person:heath_ledger			topic:name			'Heath Leadger				.
+person:heath_ledger			person:type			personType:male				.
+person:jack_nicholson		topic:name			'Jack Nicholson'			.
+person:jack_nicholson		person:type			personType:male				.
+person:ken_watanabe			topic:name			'Ken Watanabe				.
+person:ken_watanabe			person:type			personType:male				.
+person:kim_basinger			topic:name			'Kim Basinger'				.
+person:kim_basinger			person:type			personType:female			.
+person:liam_neeson			topic:name			'Liam Neeson'				.
+person:liam_neeson			person:type			personType:male				.
+person:michael_caine		topic:name			'Michael Caine'				.
+person:michael_caine		person:type			personType:male				.
+person:michael_gough		topic:name			'Michael Gough'				.
+person:michael_gough		person:type			personType:male				.
+person:michael_keaton		topic:name			'Michael Keaton'			.
+person:michael_keaton		person:type			personType:male				.
+person:michelle_pfeiffer	topic:name			'Michelle Pfeiffer'			.
+person:michelle_pfeiffer	person:type			perstonType:femal			.	
+
+person:alfred				topic:name			'Alfred Pennyworth'			.
+person:alfred				person:type			personType:ficitional		.
+person:batman				topic:name			'Batman'					.
+person:batman				person:type			personType:ficitional		.
+person:bruce_wayne			topic:name			'Bruce Wayne'				.
+person:bruce_wayne			person:type			personType:ficitional		.
+person:catwoman				topic:name			'Catwoman'					. 
+person:catwoman				person:type			personType:ficitional		.
+person:ducard				topic:name			'Ducard'					.
+person:ducard 				person:type			personType:ficitional		.
+person:ras_al_ghul			topic:name			'Ra's Al Ghul'				.
+person:ras_al_ghul			person:type			personType:ficitional		.
+person:joker				topic:name			'Joker'						.
+person:joker				person:type			personType:ficitional		.
+person:selina_kyle			topic:name			'Selina Kyle'				.
+person:selina_kyle			person:type			personType:ficitional		.
+person:penguin				topic:name			'Penguin'					.
+person:penguin				person:type			personType:ficitional		.
+person:vicki_vale			topic:name			'Vicki Vale'				.
+person:vicki_vale			person:type			personType:ficitional		.
+
+# Batman
+filmCharacter:bm_batman		filmCharacter:movie			movie:batman				.
+filmCharacter:bm_batman		filmCharacter:actor			person:michael_keaton		.
+filmCharacter:bm_batman		filmCharacter:character		person:batman				.
+
+filmCharacter:bm_bruce		filmCharacter:movie			movie:batman				.
+filmCharacter:bm_bruce		filmCharacter:actor			person:michael_keaton		.
+filmCharacter:bm_bruce		filmCharacter:character		person:bruce_wayne			.
+
+filmCharacter:bm_alfred		filmCharacter:movie			movie:batman				.
+filmCharacter:bm_alfred		filmCharacter:actor			person:michael_gough		.
+filmCharacter:bm_alfred		filmCharacter:character		person:alfred				.
+
+filmCharacter:bm_vicki		filmCharacter:movie			movie:batman				.
+filmCharacter:bm_vicki		filmCharacter:actor			person:kim_basinger			.
+filmCharacter:bm_vicki		filmCharacter:character		person:vicki_vale			.
+
+filmCharacter:bm_joker		filmCharacter:movie			movie:batman				.
+filmCharacter:bm_joker		filmCharacter:actor			person:jack_nicholson		.
+filmCharacter:bm_joker		filmCharacter:character		person:joker				.
+
+# Batman Returns
+filmCharacter:bmr_batman	filmCharacter:movie			movie:batman_returns		.
+filmCharacter:bmr_batman	filmCharacter:actor			person:michael_keaton		.
+filmCharacter:bmr_batman	filmCharacter:character		person:batman				.
+
+filmCharacter:bmr_bruce		filmCharacter:movie			movie:batman_returns		.
+filmCharacter:bmr_bruce		filmCharacter:actor			person:michael_keaton		.
+filmCharacter:bmr_bruce		filmCharacter:character		person:bruce_wayne			.
+
+filmCharacter:bmr_alfred	filmCharacter:movie			movie:batman_returns		.
+filmCharacter:bmr_alfred	filmCharacter:actor			person:michael_gough		.
+filmCharacter:bmr_alfred	filmCharacter:character		person:alfred				.
+
+filmCharacter:bmr_catwoman	filmCharacter:movie			movie:batman_returns		.
+filmCharacter:bmr_catwoman	filmCharacter:actor			person:michelle_pfeiffer	.
+filmCharacter:bmr_catwoman	filmCharacter:character		person:catwoman				.
+
+filmCharacter:bmr_selina	filmCharacter:movie			movie:batman_returns		.
+filmCharacter:bmr_selina	filmCharacter:actor			person:michelle_pfeiffer	.
+filmCharacter:bmr_selina	filmCharacter:character		person:selina_kyle			.
+
+filmCharacter:bmr_penguin	filmCharacter:movie			movie:batman_returns		.
+filmCharacter:bmr_penguin	filmCharacter:actor			person:danny_devito			.
+filmCharacter:bmr_penguin	filmCharacter:character		person:penguin				.
+
+# Batman Begins
+filmCharacter:bmb_batman	filmCharacter:movie			movie:batman_begins			.
+filmCharacter:bmb_batman	filmCharacter:actor			person:christian_bale		.
+filmCharacter:bmb_batman	filmCharacter:character		person:batman				.
+
+filmCharacter:bmb_bruce		filmCharacter:movie			movie:batman_begins			.
+filmCharacter:bmb_bruce		filmCharacter:actor			person:christian_bale		.
+filmCharacter:bmb_bruce		filmCharacter:character		person:bruce_wayne			.
+
+filmCharacter:bmb_ras		filmCharacter:movie			movie:batman_begins			.
+filmCharacter:bmb_ras		filmCharacter:actor			person:ken_watanabe			.
+filmCharacter:bmb_ras		filmCharacter:character		person:ras_al_ghul			.
+
+filmCharacter:bmb_alfred	filmCharacter:movie			movie:batman_dark_knight	.
+filmCharacter:bmb_alfred	filmCharacter:actor			person:michael_caine		.
+filmCharacter:bmb_alfred	filmCharacter:character		person:alfred				.
+
+filmCharacter:bmb_ducard	filmCharacter:movie			movie:batman_dark_knight	.
+filmCharacter:bmb_ducard	filmCharacter:actor			person:liam_neeson		.
+filmCharacter:bmb_ducard	filmCharacter:character		person:ducard				.
+
+# The Dark Knight
+filmCharacter:dk_batman		filmCharacter:movie			movie:batman_dark_knight	.
+filmCharacter:dk_batman		filmCharacter:actor			person:christian_bale		.
+filmCharacter:dk_batman		filmCharacter:character		person:batman				.
+
+filmCharacter:dk_bruce		filmCharacter:movie			movie:batman_dark_knight	.
+filmCharacter:dk_bruce		filmCharacter:actor			person:christian_bale		.
+filmCharacter:dk_bruce		filmCharacter:character		person:bruce_wayne			.
+
+filmCharacter:dk_joker		filmCharacter:movie			movie:batman_dark_knight	.
+filmCharacter:dk_joker		filmCharacter:actor			person:heath_ledger			.
+filmCharacter:dk_joker		filmCharacter:character		person:joker				.
+
+filmCharacter:dk_alfred		filmCharacter:movie			movie:batman_dark_knight	.
+filmCharacter:dk_alfred		filmCharacter:actor			person:michael_caine		.
+filmCharacter:dk_alfred		filmCharacter:character		person:alfred				.
+

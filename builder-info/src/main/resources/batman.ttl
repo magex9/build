@@ -1,0 +1,117 @@
+<http://magex.ca/data/mid/zv4sDObqHZ> <http://data.magex.ca/common/topic/name> 'Batman' .
+<http://magex.ca/data/mid/zv4sDObqHZ> <http://data.magex.ca/film/movie/released> 1989 .
+<http://magex.ca/data/mid/zv4sDObqHZ> <http://data.magex.ca/film/movie/imdb> 'tt0096895' .
+<http://magex.ca/data/mid/iHtEMNnoKc> <http://data.magex.ca/common/topic/name> 'Batman Returns' .
+<http://magex.ca/data/mid/iHtEMNnoKc> <http://data.magex.ca/film/movie/released> 1992 .
+<http://magex.ca/data/mid/iHtEMNnoKc> <http://data.magex.ca/film/movie/imdb> 'tt0103776' .
+<http://magex.ca/data/mid/xHxxy6OrbJ> <http://data.magex.ca/common/topic/name> 'Batman Begins' .
+<http://magex.ca/data/mid/xHxxy6OrbJ> <http://data.magex.ca/film/movie/released> 2005 .
+<http://magex.ca/data/mid/xHxxy6OrbJ> <http://data.magex.ca/film/movie/imdb> 'tt0372784' .
+<http://magex.ca/data/mid/r3bYeTeB52> <http://data.magex.ca/common/topic/name> 'The Dark Knight' .
+<http://magex.ca/data/mid/r3bYeTeB52> <http://data.magex.ca/film/movie/released> 2008 .
+<http://magex.ca/data/mid/xHxxy6OrbJ> <http://data.magex.ca/film/movie/imdb> 'tt0468569' .
+<http://magex.ca/data/mid/qTvuI7uIzp> <http://data.magex.ca/common/topic/name> 'Male' .
+<http://magex.ca/data/mid/DpUUC3vxAK> <http://data.magex.ca/common/topic/name> 'Female' .
+<http://magex.ca/data/mid/2oxW0Pjm68> <http://data.magex.ca/common/topic/name> 'Fictional' .
+<http://magex.ca/data/mid/6ewjNrJmxe> <http://data.magex.ca/common/topic/name> 'Christian Bale' .
+<http://magex.ca/data/mid/6ewjNrJmxe> <http://data.magex.ca/people/person/type> <http://magex.ca/data/mid/qTvuI7uIzp> .
+<http://magex.ca/data/mid/GtVDoq0awP> <http://data.magex.ca/common/topic/name> 'Danny DeVito' .
+<http://magex.ca/data/mid/GtVDoq0awP> <http://data.magex.ca/people/person/type> <http://magex.ca/data/mid/qTvuI7uIzp> .
+<http://magex.ca/data/mid/adh0to52Na> <http://data.magex.ca/common/topic/name> 'Heath Leadger .
+<http://magex.ca/data/mid/adh0to52Na> <http://data.magex.ca/people/person/type> <http://magex.ca/data/mid/qTvuI7uIzp> .
+<http://magex.ca/data/mid/iSHIQ7FQWZ> <http://data.magex.ca/common/topic/name> 'Jack Nicholson' .
+<http://magex.ca/data/mid/iSHIQ7FQWZ> <http://data.magex.ca/people/person/type> <http://magex.ca/data/mid/qTvuI7uIzp> .
+<http://magex.ca/data/mid/YJf5zwNsbx> <http://data.magex.ca/common/topic/name> 'Ken Watanabe .
+<http://magex.ca/data/mid/YJf5zwNsbx> <http://data.magex.ca/people/person/type> <http://magex.ca/data/mid/qTvuI7uIzp> .
+<http://magex.ca/data/mid/lPbZd6EgoB> <http://data.magex.ca/common/topic/name> 'Kim Basinger' .
+<http://magex.ca/data/mid/lPbZd6EgoB> <http://data.magex.ca/people/person/type> <http://magex.ca/data/mid/DpUUC3vxAK> .
+<http://magex.ca/data/mid/6PqRF2Z2d3> <http://data.magex.ca/common/topic/name> 'Liam Neeson' .
+<http://magex.ca/data/mid/6PqRF2Z2d3> <http://data.magex.ca/people/person/type> <http://magex.ca/data/mid/qTvuI7uIzp> .
+<http://magex.ca/data/mid/4aJe0IWZvK> <http://data.magex.ca/common/topic/name> 'Michael Caine' .
+<http://magex.ca/data/mid/4aJe0IWZvK> <http://data.magex.ca/people/person/type> <http://magex.ca/data/mid/qTvuI7uIzp> .
+<http://magex.ca/data/mid/223kttyYBF> <http://data.magex.ca/common/topic/name> 'Michael Gough' .
+<http://magex.ca/data/mid/223kttyYBF> <http://data.magex.ca/people/person/type> <http://magex.ca/data/mid/qTvuI7uIzp> .
+<http://magex.ca/data/mid/j4icaun2oV> <http://data.magex.ca/common/topic/name> 'Michael Keaton' .
+<http://magex.ca/data/mid/j4icaun2oV> <http://data.magex.ca/people/person/type> <http://magex.ca/data/mid/qTvuI7uIzp> .
+<http://magex.ca/data/mid/Q78gA6PZCT> <http://data.magex.ca/common/topic/name> 'Michelle Pfeiffer' .
+<http://magex.ca/data/mid/Q78gA6PZCT> <http://data.magex.ca/people/person/type> <http://magex.ca/data/mid/SI3sj0eJZe> .
+<http://magex.ca/data/mid/CindiqwGHO> <http://data.magex.ca/common/topic/name> 'Alfred Pennyworth' .
+<http://magex.ca/data/mid/CindiqwGHO> <http://data.magex.ca/people/person/type> <http://magex.ca/data/mid/Hj1MZ9NFee> .
+<http://magex.ca/data/mid/JViPJzr3Sf> <http://data.magex.ca/common/topic/name> 'Batman' .
+<http://magex.ca/data/mid/JViPJzr3Sf> <http://data.magex.ca/people/person/type> <http://magex.ca/data/mid/Hj1MZ9NFee> .
+<http://magex.ca/data/mid/cIrFhRzcw6> <http://data.magex.ca/common/topic/name> 'Bruce Wayne' .
+<http://magex.ca/data/mid/cIrFhRzcw6> <http://data.magex.ca/people/person/type> <http://magex.ca/data/mid/Hj1MZ9NFee> .
+<http://magex.ca/data/mid/hS0MjQ9Qr4> <http://data.magex.ca/common/topic/name> 'Catwoman' .
+<http://magex.ca/data/mid/hS0MjQ9Qr4> <http://data.magex.ca/people/person/type> <http://magex.ca/data/mid/Hj1MZ9NFee> .
+<http://magex.ca/data/mid/B62JOGA4Fr> <http://data.magex.ca/common/topic/name> 'Ducard' .
+<http://magex.ca/data/mid/B62JOGA4Fr> <http://data.magex.ca/people/person/type> <http://magex.ca/data/mid/Hj1MZ9NFee> .
+<http://magex.ca/data/mid/zBCDqjI6as> <http://data.magex.ca/common/topic/name> 'Ra's Al Ghul' .
+<http://magex.ca/data/mid/zBCDqjI6as> <http://data.magex.ca/people/person/type> <http://magex.ca/data/mid/Hj1MZ9NFee> .
+<http://magex.ca/data/mid/NIqRm862Ln> <http://data.magex.ca/common/topic/name> 'Joker' .
+<http://magex.ca/data/mid/NIqRm862Ln> <http://data.magex.ca/people/person/type> <http://magex.ca/data/mid/Hj1MZ9NFee> .
+<http://magex.ca/data/mid/I2Y5c74eyZ> <http://data.magex.ca/common/topic/name> 'Selina Kyle' .
+<http://magex.ca/data/mid/I2Y5c74eyZ> <http://data.magex.ca/people/person/type> <http://magex.ca/data/mid/Hj1MZ9NFee> .
+<http://magex.ca/data/mid/j1dmBkaVue> <http://data.magex.ca/common/topic/name> 'Penguin' .
+<http://magex.ca/data/mid/j1dmBkaVue> <http://data.magex.ca/people/person/type> <http://magex.ca/data/mid/Hj1MZ9NFee> .
+<http://magex.ca/data/mid/j8JoI7mWMr> <http://data.magex.ca/common/topic/name> 'Vicki Vale' .
+<http://magex.ca/data/mid/j8JoI7mWMr> <http://data.magex.ca/people/person/type> <http://magex.ca/data/mid/Hj1MZ9NFee> .
+<http://magex.ca/data/mid/MHjXLoLJkB> <http://data.magex.ca/film/character/movie> <http://magex.ca/data/mid/zv4sDObqHZ> .
+<http://magex.ca/data/mid/MHjXLoLJkB> <http://data.magex.ca/film/character/actor> <http://magex.ca/data/mid/j4icaun2oV> .
+<http://magex.ca/data/mid/MHjXLoLJkB> <http://data.magex.ca/film/character/character> <http://magex.ca/data/mid/JViPJzr3Sf> .
+<http://magex.ca/data/mid/TYDg7L51XO> <http://data.magex.ca/film/character/movie> <http://magex.ca/data/mid/zv4sDObqHZ> .
+<http://magex.ca/data/mid/TYDg7L51XO> <http://data.magex.ca/film/character/actor> <http://magex.ca/data/mid/j4icaun2oV> .
+<http://magex.ca/data/mid/TYDg7L51XO> <http://data.magex.ca/film/character/character> <http://magex.ca/data/mid/cIrFhRzcw6> .
+<http://magex.ca/data/mid/a3Fgnj2C5n> <http://data.magex.ca/film/character/movie> <http://magex.ca/data/mid/zv4sDObqHZ> .
+<http://magex.ca/data/mid/a3Fgnj2C5n> <http://data.magex.ca/film/character/actor> <http://magex.ca/data/mid/223kttyYBF> .
+<http://magex.ca/data/mid/a3Fgnj2C5n> <http://data.magex.ca/film/character/character> <http://magex.ca/data/mid/CindiqwGHO> .
+<http://magex.ca/data/mid/4JFDJYa2IE> <http://data.magex.ca/film/character/movie> <http://magex.ca/data/mid/zv4sDObqHZ> .
+<http://magex.ca/data/mid/4JFDJYa2IE> <http://data.magex.ca/film/character/actor> <http://magex.ca/data/mid/lPbZd6EgoB> .
+<http://magex.ca/data/mid/4JFDJYa2IE> <http://data.magex.ca/film/character/character> <http://magex.ca/data/mid/j8JoI7mWMr> .
+<http://magex.ca/data/mid/ApYmPKQGj5> <http://data.magex.ca/film/character/movie> <http://magex.ca/data/mid/zv4sDObqHZ> .
+<http://magex.ca/data/mid/ApYmPKQGj5> <http://data.magex.ca/film/character/actor> <http://magex.ca/data/mid/iSHIQ7FQWZ> .
+<http://magex.ca/data/mid/ApYmPKQGj5> <http://data.magex.ca/film/character/character> <http://magex.ca/data/mid/NIqRm862Ln> .
+<http://magex.ca/data/mid/ExQVaEqCRX> <http://data.magex.ca/film/character/movie> <http://magex.ca/data/mid/iHtEMNnoKc> .
+<http://magex.ca/data/mid/ExQVaEqCRX> <http://data.magex.ca/film/character/actor> <http://magex.ca/data/mid/j4icaun2oV> .
+<http://magex.ca/data/mid/ExQVaEqCRX> <http://data.magex.ca/film/character/character> <http://magex.ca/data/mid/JViPJzr3Sf> .
+<http://magex.ca/data/mid/gr4PlZuaGI> <http://data.magex.ca/film/character/movie> <http://magex.ca/data/mid/iHtEMNnoKc> .
+<http://magex.ca/data/mid/gr4PlZuaGI> <http://data.magex.ca/film/character/actor> <http://magex.ca/data/mid/j4icaun2oV> .
+<http://magex.ca/data/mid/gr4PlZuaGI> <http://data.magex.ca/film/character/character> <http://magex.ca/data/mid/cIrFhRzcw6> .
+<http://magex.ca/data/mid/Xh1GwBoqDw> <http://data.magex.ca/film/character/movie> <http://magex.ca/data/mid/iHtEMNnoKc> .
+<http://magex.ca/data/mid/Xh1GwBoqDw> <http://data.magex.ca/film/character/actor> <http://magex.ca/data/mid/223kttyYBF> .
+<http://magex.ca/data/mid/Xh1GwBoqDw> <http://data.magex.ca/film/character/character> <http://magex.ca/data/mid/CindiqwGHO> .
+<http://magex.ca/data/mid/gqy8SclOcq> <http://data.magex.ca/film/character/movie> <http://magex.ca/data/mid/iHtEMNnoKc> .
+<http://magex.ca/data/mid/gqy8SclOcq> <http://data.magex.ca/film/character/actor> <http://magex.ca/data/mid/Q78gA6PZCT> .
+<http://magex.ca/data/mid/gqy8SclOcq> <http://data.magex.ca/film/character/character> <http://magex.ca/data/mid/hS0MjQ9Qr4> .
+<http://magex.ca/data/mid/xJlETN86b7> <http://data.magex.ca/film/character/movie> <http://magex.ca/data/mid/iHtEMNnoKc> .
+<http://magex.ca/data/mid/xJlETN86b7> <http://data.magex.ca/film/character/actor> <http://magex.ca/data/mid/Q78gA6PZCT> .
+<http://magex.ca/data/mid/xJlETN86b7> <http://data.magex.ca/film/character/character> <http://magex.ca/data/mid/I2Y5c74eyZ> .
+<http://magex.ca/data/mid/Pz860YVCOb> <http://data.magex.ca/film/character/movie> <http://magex.ca/data/mid/iHtEMNnoKc> .
+<http://magex.ca/data/mid/Pz860YVCOb> <http://data.magex.ca/film/character/actor> <http://magex.ca/data/mid/GtVDoq0awP> .
+<http://magex.ca/data/mid/Pz860YVCOb> <http://data.magex.ca/film/character/character> <http://magex.ca/data/mid/j1dmBkaVue> .
+<http://magex.ca/data/mid/QiTa1kx0Bi> <http://data.magex.ca/film/character/movie> <http://magex.ca/data/mid/xHxxy6OrbJ> .
+<http://magex.ca/data/mid/QiTa1kx0Bi> <http://data.magex.ca/film/character/actor> <http://magex.ca/data/mid/6ewjNrJmxe> .
+<http://magex.ca/data/mid/QiTa1kx0Bi> <http://data.magex.ca/film/character/character> <http://magex.ca/data/mid/JViPJzr3Sf> .
+<http://magex.ca/data/mid/Cei1E80W8X> <http://data.magex.ca/film/character/movie> <http://magex.ca/data/mid/xHxxy6OrbJ> .
+<http://magex.ca/data/mid/Cei1E80W8X> <http://data.magex.ca/film/character/actor> <http://magex.ca/data/mid/6ewjNrJmxe> .
+<http://magex.ca/data/mid/Cei1E80W8X> <http://data.magex.ca/film/character/character> <http://magex.ca/data/mid/cIrFhRzcw6> .
+<http://magex.ca/data/mid/epyfrdeWmQ> <http://data.magex.ca/film/character/movie> <http://magex.ca/data/mid/xHxxy6OrbJ> .
+<http://magex.ca/data/mid/epyfrdeWmQ> <http://data.magex.ca/film/character/actor> <http://magex.ca/data/mid/YJf5zwNsbx> .
+<http://magex.ca/data/mid/epyfrdeWmQ> <http://data.magex.ca/film/character/character> <http://magex.ca/data/mid/zBCDqjI6as> .
+<http://magex.ca/data/mid/AAoEL8dbx6> <http://data.magex.ca/film/character/movie> <http://magex.ca/data/mid/Teg6lrPRYF> .
+<http://magex.ca/data/mid/AAoEL8dbx6> <http://data.magex.ca/film/character/actor> <http://magex.ca/data/mid/4aJe0IWZvK> .
+<http://magex.ca/data/mid/AAoEL8dbx6> <http://data.magex.ca/film/character/character> <http://magex.ca/data/mid/CindiqwGHO> .
+<http://magex.ca/data/mid/UculDbALma> <http://data.magex.ca/film/character/movie> <http://magex.ca/data/mid/Teg6lrPRYF> .
+<http://magex.ca/data/mid/UculDbALma> <http://data.magex.ca/film/character/actor> <http://magex.ca/data/mid/6PqRF2Z2d3> .
+<http://magex.ca/data/mid/UculDbALma> <http://data.magex.ca/film/character/character> <http://magex.ca/data/mid/B62JOGA4Fr> .
+<http://magex.ca/data/mid/QQvvyEDz1B> <http://data.magex.ca/film/character/movie> <http://magex.ca/data/mid/Teg6lrPRYF> .
+<http://magex.ca/data/mid/QQvvyEDz1B> <http://data.magex.ca/film/character/actor> <http://magex.ca/data/mid/6ewjNrJmxe> .
+<http://magex.ca/data/mid/QQvvyEDz1B> <http://data.magex.ca/film/character/character> <http://magex.ca/data/mid/JViPJzr3Sf> .
+<http://magex.ca/data/mid/2KO8ypZGyP> <http://data.magex.ca/film/character/movie> <http://magex.ca/data/mid/Teg6lrPRYF> .
+<http://magex.ca/data/mid/2KO8ypZGyP> <http://data.magex.ca/film/character/actor> <http://magex.ca/data/mid/6ewjNrJmxe> .
+<http://magex.ca/data/mid/2KO8ypZGyP> <http://data.magex.ca/film/character/character> <http://magex.ca/data/mid/cIrFhRzcw6> .
+<http://magex.ca/data/mid/GgalsFCaSg> <http://data.magex.ca/film/character/movie> <http://magex.ca/data/mid/Teg6lrPRYF> .
+<http://magex.ca/data/mid/GgalsFCaSg> <http://data.magex.ca/film/character/actor> <http://magex.ca/data/mid/adh0to52Na> .
+<http://magex.ca/data/mid/GgalsFCaSg> <http://data.magex.ca/film/character/character> <http://magex.ca/data/mid/NIqRm862Ln> .
+<http://magex.ca/data/mid/4iQwB232DN> <http://data.magex.ca/film/character/movie> <http://magex.ca/data/mid/Teg6lrPRYF> .
+<http://magex.ca/data/mid/4iQwB232DN> <http://data.magex.ca/film/character/actor> <http://magex.ca/data/mid/4aJe0IWZvK> .
+<http://magex.ca/data/mid/4iQwB232DN> <http://data.magex.ca/film/character/character> <http://magex.ca/data/mid/CindiqwGHO> .

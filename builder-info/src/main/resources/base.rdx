@@ -15,41 +15,43 @@
 <http://data.magex.ca/common/topic/>			<http://data.magex.ca/common/topic/name/>		'Topics'				.
 <http://data.magex.ca/common/topic/name/>		<http://data.magex.ca/common/topic/name/>		'Name'					.
 
-@prefix common:			<http://data.magex.ca/common/topic/>			.
-@prefix object:			<http://data.magex.ca/system/object/>			.
-@prefix property:		<http://data.magex.ca/property/expectedType/>	.
-object:text				common:name				'Text'					.
-object:number			common:name				'Number'				.
-object:type				common:name				object:text				.
+@prefix topic:			<http://data.magex.ca/common/topic/>			.
+@prefix object:			<http://data.magex.ca/common/object/>			.
+@prefix property:		<http://data.magex.ca/common/property/>			.
+object:text				topic:name				'Text'					.
+object:number			topic:name				'Number'				.
+object:type				topic:name				'Type'					.
+object:boolean			topic:name				'Boolean'				.
 
-property:unique			common:name				'Unique'				.
-property:unique			property:name			'unique'				.
-common:name				property:expectedType	system:text				.
-common:name				property:unique			true					.
-
-common:name				common:name				'Name'					.
-common:name				property:name			'name'					.
-common:name				property:expectedType	system:text				.
-common:name				property:unique			true					.
+topic:name				topic:name				'Name'					.
+topic:name				property:name			'name'					.
+topic:name				property:expectedType	system:text				.
+topic:name				property:unique			true					.
 
 # A set of common types that all other databases can use for vocaulary
 @prefix type:			<http://data.magex.ca/common/type/>				.
 
-type:success		common:name					'Success'				.
+type:success		topic:name					'Success'				.
+type:success		topic:description			'An event which was successful'	.
 type:success		type:code					'success'				.
-type:error			common:name					'Error'					.
+type:error			topic:name					'Error'					.
+type:error			topic:description			'An event which was not successful and will cause a loss of information'	.
 type:error			type:code					'error'					.
-type:warning		common:name					'Warning'				.
+type:warning		topic:name					'Warning'				.
+type:warning		topic:desciprtion			'An event which was successful but has items that should be reviewed'	.
 type:warning		type:code					'warn'					.
-type:info			common:name					'Notification'			.
+type:info			topic:name					'Notification'			.
+type:info			topic:desciprtion			'An informative message about an event that happened'	.
 type:info			type:code					'info'					.
 
 @prefix country:		<http://data.magex.ca/location/country/>		.
-country:ca				common:name				'Canada'				.
+country:ca				topic:name				'Canada'				.
 country:ca				country:code			'ca'					.
+country:us				type:name				'USA'					.
+country:us				country:code			'us'					.
 
 @prefix city:			<http://data.magex.ca/location/city/>			.
-city:ottawa				common:name				'Ottawa'				.
+city:ottawa				topic:name				'Ottawa'				.
 city:ottawa				city:code				'yow'					.
 
 @prefix address:		<http://data.magex.ca/location/address/>		.
@@ -57,12 +59,12 @@ address:1_main_ottawa	address:street			'1 Main St'				.
 address:1_main_ottawa	address:city			city:ottawa				.
 
 @prefix person:			<http://data.magex.ca/people/person/>			.
-person:scott@test.com	common:name				'Scott Finlay'			.
+person:scott@test.com	topic:name				'Scott Finlay'			.
 person:scott@test.com	person:firstName		'Scott'					.
 person:scott@test.com	person:lastName			'Finlay'				.
 person:scott@test.com	person:homeAddress		location:1_main_ottawa	.
 
-person:fiona@test.com	common:name				'Fiona Finlay'			.
+person:fiona@test.com	topic:name				'Fiona Finlay'			.
 person:fiona@test.com	person:firstName		'Fiona'					.
 person:fiona@test.com	person:lastName			'Finlay'				.
 person:fiona@test.com	person:homeAddress		location:1_main_ottawa	.

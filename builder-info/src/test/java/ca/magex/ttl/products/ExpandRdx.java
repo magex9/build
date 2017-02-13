@@ -10,12 +10,14 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.io.FileUtils;
 import org.apache.xerces.impl.dv.util.Base64;
 
-public class ParseProducts {
+public class ExpandRdx {
 
 	public static void main(String[] args) throws Exception {
-		new ParseProducts().run(new File("src/main/resources/common.rdx"));
-		new ParseProducts().run(new File("src/main/resources/base.rdx"));
-		new ParseProducts().run(new File("src/main/resources/products.rdx"));
+		for (File file : new File("src/main/resources").listFiles()) {
+			if (file.getName().endsWith(".rdx")) {
+				new ExpandRdx().run(file);
+			}
+		}
 	}
 	
 	private static final Pattern PREFIX = Pattern.compile("@prefix\\s+([^\\s]+):\\s+<(.*)>\\s+\\.\\s*");
