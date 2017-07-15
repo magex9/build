@@ -1,7 +1,6 @@
 package ca.magex.maven.repository;
 
 import ca.magex.maven.model.Gav;
-import ca.magex.maven.model.MavenRepository;
 
 public class FilesystemMavenRepositoryTest {
 

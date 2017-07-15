@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 
 import ca.magex.maven.model.Gav;
-import ca.magex.maven.model.MavenRepository;
 
 /**
  * A caching wrapper for any repository to cache the information from the finder
@@ -42,6 +41,21 @@ public class CachedMavenRepository implements MavenRepository {
 	public List<String> findAllGroupIds() {
 		String key = "findAllGroupIds()";
 		return (List<String>)cache(key, repo.findAllGroupIds());
+	}
+	
+	public List<String> findRootGroups() {
+		String key = "findRootGroups()";
+		return (List<String>)cache(key, repo.findRootGroups());
+	}
+
+	public List<String> findChildGroups(String group) {
+		String key = "findChildGroups(" + group + ")";
+		return (List<String>)cache(key, repo.findChildGroups(group));
+	}
+
+	public boolean isGroupId(String groupId) {
+		String key = "isGroupId(" + groupId + ")";
+		return (Boolean)cache(key, repo.isGroupId(groupId));
 	}
 
 	public List<String> findArtifactIds(String groupId) {

@@ -17,7 +17,6 @@ import java.util.regex.Pattern;
 
 import ca.magex.maven.exceptions.MavenException;
 import ca.magex.maven.model.Gav;
-import ca.magex.maven.model.MavenRepository;
 
 public class FilesystemMavenRepository implements MavenRepository {
 
@@ -35,6 +34,27 @@ public class FilesystemMavenRepository implements MavenRepository {
 
 	public List<String> findAllGroupIds() {
 		return appendGroupIds(basedir, new ArrayList<String>());
+	}
+
+	public List<String> findRootGroups() {
+		return findChildGroups("");
+	}
+
+	public List<String> findChildGroups(String group) {
+		List<String> groupIds = new ArrayList<String>();
+		File dir = new File(basedir + File.separator + 
+				group.replaceAll("\\.", File.separator));
+		for (File file : dir.listFiles()) {
+			if (file.isDirectory()) {
+				groupIds.add(file.getName());
+			}
+		}
+		return groupIds;
+	}
+
+	public boolean isGroupId(String groupId) {
+		return new File(basedir + File.separator + 
+				groupId.replaceAll("\\.", File.separator)).exists();
 	}
 	
 	private List<String> appendGroupIds(File dir, List<String> groupIds) {

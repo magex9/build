@@ -20,7 +20,7 @@ import org.apache.maven.plugins.annotations.Parameter;
 
 import ca.magex.maven.exceptions.MavenException;
 import ca.magex.maven.model.Gav;
-import ca.magex.maven.model.MavenRepository;
+import ca.magex.maven.repository.MavenRepository;
 import ca.magex.maven.repository.MavenRepositoryFactory;
 
 @Mojo(name = "upload-maven-repository", requiresProject = false)

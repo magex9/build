@@ -1,8 +1,10 @@
-package ca.magex.maven.model;
+package ca.magex.maven.repository;
 
 import java.io.File;
 import java.io.InputStream;
 import java.util.List;
+
+import ca.magex.maven.model.Gav;
 
 /**
  * The maven repository interface gives the ability to query and gain access to
@@ -18,11 +20,34 @@ import java.util.List;
 public interface MavenRepository {
 
 	/**
+	 * Find a list of all the root group names
+	 * 
+	 * @return
+	 */
+	List<String> findRootGroups();
+
+	/**
+	 * Find a list of all the groups under the given one
+	 * 
+	 * @return
+	 */
+	List<String> findChildGroups(String group);
+
+	/**
 	 * Find all of the group id's in the system
 	 * 
 	 * @return
 	 */
 	List<String> findAllGroupIds();
+
+	/**
+	 * Check to see if the given groupId is a fully qualified group id for this
+	 * repository
+	 * 
+	 * @param groupId
+	 * @return
+	 */
+	boolean isGroupId(String groupId);
 
 	/**
 	 * Find all of the artifact id's for a given group
@@ -99,6 +124,7 @@ public interface MavenRepository {
 
 	/**
 	 * Get the text content from a specified gav
+	 * 
 	 * @param gav
 	 * @return
 	 */

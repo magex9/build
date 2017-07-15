@@ -4,6 +4,8 @@ target/
 .classpath
 .settings/
 .metadata/
+.idea/
+*.iml
 .recommenders/
 .DS_Store
 *.zip

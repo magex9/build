@@ -1,7 +1,6 @@
 package ca.magex.maven.repository;
 
 import ca.magex.maven.exceptions.MavenException;
-import ca.magex.maven.model.MavenRepository;
 
 public class MavenRepositoryFactory {
 

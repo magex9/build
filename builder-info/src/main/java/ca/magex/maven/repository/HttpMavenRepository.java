@@ -13,9 +13,10 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.lang3.NotImplementedException;
+
 import ca.magex.maven.exceptions.MavenException;
 import ca.magex.maven.model.Gav;
-import ca.magex.maven.model.MavenRepository;
 
 public class HttpMavenRepository implements MavenRepository {
 
@@ -31,8 +32,22 @@ public class HttpMavenRepository implements MavenRepository {
 	}
 	
 	public List<String> findAllGroupIds() {
-		// TODO Auto-generated method stub
-		return null;
+		throw new NotImplementedException("Not implemented for http repostory, could take up too much bandwidth");
+	}
+
+	public List<String> findRootGroups() {
+		String url = baseurl;
+		return directories(url);
+	}
+
+	public List<String> findChildGroups(String group) {
+		String url = baseurl + "/" + group.replaceAll("\\.", "/");
+		return directories(url);
+	}
+
+	public boolean isGroupId(String groupId) {
+		String url = baseurl + "/" + groupId.replaceAll("\\.", "/");
+		return !directories(url).isEmpty();
 	}
 
 	public List<String> findArtifactIds(String groupId) {

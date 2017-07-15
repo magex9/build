@@ -9,10 +9,9 @@ import org.apache.maven.model.Model;
 import org.apache.maven.model.io.xpp3.MavenXpp3Reader;
 
 import ca.magex.maven.model.Gav;
-import ca.magex.maven.model.MavenRepository;
 import ca.magex.maven.repository.FilesystemMavenRepository;
 
-public class ApacheCentralMavenRepositoryTest {
+public class MavenCentralRepositoryTest {
 
 	public static void main(String[] args) throws Exception {
 		//ApacheMavenRepository repo = new ApacheMavenRepository();

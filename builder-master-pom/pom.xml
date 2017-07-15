@@ -1,25 +1,25 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<groupId>ca.magex.build</groupId>
 	<artifactId>builder-master-pom</artifactId>
 	<version>1.7.6-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	
+
 	<name>Master Pom</name>
 	<description>Builds/Contains all modules</description>
 
-        <scm>
-                <developerConnection>scm:svn:https://github.com/magex9/build.git/tags/builder-product-1.6.5/master-pom</developerConnection>
-        </scm>
+	<scm>
+		<developerConnection>scm:svn:https://github.com/magex9/build.git/tags/builder-product-1.6.5/master-pom</developerConnection>
+	</scm>
 
-	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-	
+
 	<build>
-	
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -27,9 +27,9 @@
 				<version>2.5.3</version>
 			</plugin>
 		</plugins>
-		
+
 	</build>
-	
+
 	<repositories>
 		<repository>
 			<id>releases</id>
@@ -56,7 +56,7 @@
 			</snapshots>
 		</repository>
 	</repositories>
-	
+
 	<distributionManagement>
 		<repository>
 			<id>releases</id>
@@ -73,5 +73,5 @@
 			<url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
-	
+
 </project>
