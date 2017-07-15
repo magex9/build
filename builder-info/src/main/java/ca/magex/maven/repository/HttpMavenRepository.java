@@ -1,6 +1,5 @@
 package ca.magex.maven.repository;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -14,7 +13,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.NotImplementedException;
+import org.apache.http.client.fluent.Request;
 
+import ca.magex.maven.exceptions.GavNotFoundException;
 import ca.magex.maven.exceptions.MavenException;
 import ca.magex.maven.model.Gav;
 
@@ -25,8 +26,8 @@ public class HttpMavenRepository implements MavenRepository {
 	private final String baseurl;
 	
 	public HttpMavenRepository(String repoId, String baseurl) {
-		if (!content(baseurl).contains("Index of"))
-			throw new MavenException("Base url is not in the expected format: " + baseurl);
+//		if (!content(baseurl).contains("Index of"))
+//			throw new MavenException("Base url is not in the expected format: " + baseurl);
 		this.repoId = repoId;
 		this.baseurl = baseurl;
 	}
@@ -51,8 +52,13 @@ public class HttpMavenRepository implements MavenRepository {
 	}
 
 	public List<String> findArtifactIds(String groupId) {
-		// TODO Auto-generated method stub
-		return null;
+		String url = baseurl + "/" + groupId.replaceAll("\\.", "/");
+		List<String> versions = new ArrayList<String>();
+		for (String link : directories(url)) {
+			if (directories(url).contains("metadata.xml"))
+				versions.add(link);
+		}
+		return versions;
 	}
 
 	public List<String> findVersions(String groupId, String artifactId) {
@@ -103,10 +109,8 @@ public class HttpMavenRepository implements MavenRepository {
 	}
 
 	public boolean contains(Gav gav) {
-		String url = url(gav);
 		try {
-			new URL(url).openConnection().getInputStream();
-			return true;
+			return Request.Get(url(gav)).execute().returnResponse().getStatusLine().getStatusCode() == 200;
 		} catch (Exception e) {
 			return false;
 		}
@@ -116,16 +120,16 @@ public class HttpMavenRepository implements MavenRepository {
 		try {
 			stream(read(gav), new FileOutputStream(file));
 		} catch (FileNotFoundException e) {
-			throw new MavenException("Unable to download gav to file: " + gav + " to " + file.getAbsolutePath(), e);
+			throw new GavNotFoundException("Unable to download gav to file: " + gav + " to " + file.getAbsolutePath(), e);
 		}
 	}
 
 	public InputStream read(Gav gav) {
 		String url = url(gav);
 		try {
-			return new URL(url).openConnection().getInputStream();
+			return Request.Get(url).execute().returnResponse().getEntity().getContent();
 		} catch (Exception e) {
-			throw new MavenException("Unable to open connection to: " + url, e);
+			throw new GavNotFoundException("Unable to read url to: " + url, e);
 		}
 	}
 
@@ -182,12 +186,9 @@ public class HttpMavenRepository implements MavenRepository {
 	
 	public String content(String url) {
 		try {
-			ByteArrayOutputStream os = new ByteArrayOutputStream();
-			InputStream is = new URL(url).openConnection().getInputStream();
-			stream(is, os);
-			return os.toString();
+			return Request.Get(url).execute().returnContent().asString();
 		} catch (IOException e) {
-			throw new MavenException("Unable to get content: " + url, e);
+			throw new MavenException("Unable to get content");
 		}
 	}
 	
