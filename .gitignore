@@ -6,6 +6,7 @@ target/
 .metadata/
 .idea/
 *.iml
+*.log
 .recommenders/
 .DS_Store
 *.zip

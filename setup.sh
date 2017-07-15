@@ -6,4 +6,4 @@ export WORKSPACE=/Users/magex/workspace/maven
 # The base svn directory of the build project
 export SVNBASE="https://github.com/magex9/build.git"
 
-sh commands.sh
+sh commands.sh | tee setup-`date "+%Y%m%d%H%M%S"`.log
