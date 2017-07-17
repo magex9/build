@@ -1,5 +1,7 @@
 package ca.magex.maven.exceptions;
 
+import ca.magex.maven.model.Gav;
+
 /**
  * A generic catch all for thrown exceptions to become runtime.
  * 
@@ -16,12 +18,12 @@ public class GavNotFoundException extends RuntimeException {
 
 	private static final long serialVersionUID = 928948923492843L;
 
-	public GavNotFoundException(String msg) {
-		super(msg);
+	public GavNotFoundException(Gav gav) {
+		super("Unable to find gav " + gav);
 	}
 
-	public GavNotFoundException(String msg, Exception e) {
-		super(msg, e);
+	public GavNotFoundException(Gav gav, Exception e) {
+		super("Unable to find gav " + gav, e);
 	}
 
 }

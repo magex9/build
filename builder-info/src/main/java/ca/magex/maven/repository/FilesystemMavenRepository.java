@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URI;
@@ -14,7 +15,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
+import org.apache.maven.shared.utils.io.IOUtil;
+
+import ca.magex.maven.exceptions.GavNotFoundException;
 import ca.magex.maven.exceptions.MavenException;
 import ca.magex.maven.model.Gav;
 
@@ -28,7 +33,7 @@ public class FilesystemMavenRepository implements MavenRepository {
 	
 	public FilesystemMavenRepository(File basedir) {
 		if (!basedir.exists() || !basedir.isDirectory())
-			throw new MavenException("Base directory does not exist: " + basedir);
+			throw new IllegalArgumentException("Base directory does not exist: " + basedir);
 		this.basedir = basedir;
 	}
 
@@ -99,19 +104,18 @@ public class FilesystemMavenRepository implements MavenRepository {
 	}
 
 	public Gav findPom(String groupId, String artifactId, String version) {
-		for (Gav gav : findArtifacts(groupId, artifactId, version)) {
-			if (gav.getPackaging().equals("pom"))
-				return gav;
-		}
-		return null;
+		return findArtifacts(groupId, artifactId, version)
+				.stream()
+				.filter(gav -> gav.getPackaging().equals("pom"))
+				.findFirst().get();
 	}
 
 	public Gav findArtifact(String groupId, String artifactId, String version) {
-		for (Gav gav : findArtifacts(groupId, artifactId, version)) {
-			if (!gav.getPackaging().equals("pom") && gav.getClassifier() == null)
-				return gav;
-		}
-		return null;
+		return findArtifacts(groupId, artifactId, version)
+			.stream()
+			.filter(gav -> !gav.getPackaging().equals("pom") && 
+					gav.getClassifier() == null)
+			.findFirst().get();
 	}
 
 	public List<Gav> findArtifacts(String groupId, String artifactId, String version) {
@@ -149,32 +153,43 @@ public class FilesystemMavenRepository implements MavenRepository {
 	public String content(Gav gav) {
 		ByteArrayOutputStream os = new ByteArrayOutputStream();
 		InputStream is = read(gav);
-		stream(is, os);
+		try {
+			IOUtil.copy(is, os);
+		} catch (IOException e) {
+			throw new GavNotFoundException(gav, e);
+		} finally {
+			IOUtil.close(is);
+			IOUtil.close(os);
+		}
 		return new String(os.toByteArray(), Charset.defaultCharset());
 	}
 
 	public void download(Gav gav, File file) {
 		if (file == null)
-			throw new MavenException("Cannot download null file");
+			throw new IllegalArgumentException("Cannot download null file");
+		InputStream is = null;
+		OutputStream os = null;
 		try {
-			FileOutputStream os = new FileOutputStream(file);
-			InputStream is = read(gav);
-			stream(is, os);
-		} catch (Exception e) {
-			throw new MavenException("Unable to download file: " + gav.toString() + " to " + file.getAbsolutePath(), e);
+			is = read(gav);
+			os = new FileOutputStream(file);
+			IOUtil.copy(is, os);
+		} catch (IOException e) {
+			throw new GavNotFoundException(gav, e);
+		} finally {
+			IOUtil.close(is);
+			IOUtil.close(os);
 		}
 	}
 	
-	private void stream(InputStream is, OutputStream os) {
+	public void upload(Gav gav, InputStream is) {
+		FileOutputStream os = null;
 		try {
-			byte[] buffer = new byte[1024];
-			int len = is.read(buffer);
-			while (len != -1) {
-			    os.write(buffer, 0, len);
-			    len = is.read(buffer);
-			}
-		} catch (Exception e) {
-			throw new MavenException("Unable to stream input to output", e);
+			os = new FileOutputStream(file(gav));
+			IOUtil.copy(is, os);
+		} catch (IOException e) {
+			throw new GavNotFoundException(gav, e);
+		} finally {
+			IOUtil.close(os);
 		}
 	}
 	
@@ -196,7 +211,7 @@ public class FilesystemMavenRepository implements MavenRepository {
 		try {
 			return new FileInputStream(file(gav));
 		} catch (FileNotFoundException e) {
-			throw new MavenException("Unable to read file: " + file(gav).getAbsolutePath(), e);
+			throw new GavNotFoundException(gav, e);
 		}
 	}
 
@@ -212,7 +227,7 @@ public class FilesystemMavenRepository implements MavenRepository {
 		try {
 			return new URI(getFile(gav).getAbsolutePath());
 		} catch (URISyntaxException e) {
-			throw new MavenException("Unable to get the root uri: " + basedir.getAbsolutePath(), e);
+			throw new GavNotFoundException(new Gav(gav));
 		}
 	}
 

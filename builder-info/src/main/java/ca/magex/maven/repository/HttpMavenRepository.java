@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.NotImplementedException;
 import org.apache.http.client.fluent.Request;
 
@@ -37,37 +38,53 @@ public class HttpMavenRepository implements MavenRepository {
 	}
 
 	public List<String> findRootGroups() {
-		String url = baseurl;
-		return directories(url);
+		try {
+			String url = baseurl;
+			return directories(url);
+		} catch (IOException e) {
+			throw new GavNotFoundException(null);
+		}
 	}
 
 	public List<String> findChildGroups(String group) {
-		String url = baseurl + "/" + group.replaceAll("\\.", "/");
-		return directories(url);
+		try {
+			String url = baseurl + "/" + group.replaceAll("\\.", "/");
+			return directories(url);
+		} catch (IOException e) {
+			throw new GavNotFoundException(null);
+		}
 	}
 
 	public boolean isGroupId(String groupId) {
-		String url = baseurl + "/" + groupId.replaceAll("\\.", "/");
-		return !directories(url).isEmpty();
+		try {
+			String url = baseurl + "/" + groupId.replaceAll("\\.", "/");
+			return !directories(url).isEmpty();
+		} catch (IOException e) {
+			throw new GavNotFoundException(null);
+		}
 	}
 
 	public List<String> findArtifactIds(String groupId) {
-		String url = baseurl + "/" + groupId.replaceAll("\\.", "/");
-		List<String> versions = new ArrayList<String>();
-		for (String link : directories(url)) {
-			if (directories(url).contains("metadata.xml"))
-				versions.add(link);
+		try {
+			String url = baseurl + "/" + groupId.replaceAll("\\.", "/");
+			List<String> versions = new ArrayList<String>();
+			for (String link : directories(url)) {
+				if (directories(url).contains("metadata.xml"))
+					versions.add(link);
+			}
+			return versions;
+		} catch (IOException e) {
+			throw new GavNotFoundException(new Gav(groupId, null, null));
 		}
-		return versions;
 	}
 
 	public List<String> findVersions(String groupId, String artifactId) {
-		String url = baseurl + "/" + groupId.replaceAll("\\.", "/") + "/" + artifactId;
-		List<String> versions = new ArrayList<String>();
-		for (String link : directories(url)) {
-			versions.add(link);
+		try {
+			String url = baseurl + "/" + groupId.replaceAll("\\.", "/") + "/" + artifactId;
+			return directories(url);
+		} catch (IOException e) {
+			throw new GavNotFoundException(new Gav(groupId, artifactId, null));
 		}
-		return versions;
 	}
 
 	public Gav findPom(String groupId, String artifactId, String version) {
@@ -87,14 +104,18 @@ public class HttpMavenRepository implements MavenRepository {
 	}
 
 	public List<Gav> findArtifacts(String groupId, String artifactId, String version) {
-		String url = baseurl + "/" + groupId.replaceAll("\\.", "/") + "/" + artifactId + "/" + version;
-		List<Gav> artifacts = new ArrayList<Gav>();
-		for (String link : files(url)) {
-			Gav gav = parse(groupId, artifactId, version, link);
-			if (gav != null && !artifacts.contains(gav))
-				artifacts.add(gav);
+		try {
+			String url = baseurl + "/" + groupId.replaceAll("\\.", "/") + "/" + artifactId + "/" + version;
+			List<Gav> artifacts = new ArrayList<Gav>();
+			for (String link : files(url)) {
+				Gav gav = parse(groupId, artifactId, version, link);
+				if (gav != null && !artifacts.contains(gav))
+					artifacts.add(gav);
+			}
+			return artifacts;
+		} catch (IOException e) {
+			throw new GavNotFoundException(new Gav(groupId, artifactId, version));
 		}
-		return artifacts;
 	}
 	
 	private Gav parse(String groupId, String artifactId, String version, String filename) {
@@ -118,18 +139,17 @@ public class HttpMavenRepository implements MavenRepository {
 
 	public void download(Gav gav, File file) {
 		try {
-			stream(read(gav), new FileOutputStream(file));
-		} catch (FileNotFoundException e) {
-			throw new GavNotFoundException("Unable to download gav to file: " + gav + " to " + file.getAbsolutePath(), e);
+			IOUtils.copy(read(gav), new FileOutputStream(file));
+		} catch (IOException e) {
+			throw new GavNotFoundException(gav, e);
 		}
 	}
 
 	public InputStream read(Gav gav) {
-		String url = url(gav);
 		try {
-			return Request.Get(url).execute().returnResponse().getEntity().getContent();
+			return Request.Get(url(gav)).execute().returnResponse().getEntity().getContent();
 		} catch (Exception e) {
-			throw new GavNotFoundException("Unable to read url to: " + url, e);
+			throw new GavNotFoundException(gav, e);
 		}
 	}
 
@@ -149,7 +169,7 @@ public class HttpMavenRepository implements MavenRepository {
 				gav.getFilename();
 	}
 	
-	public List<String> directories(String url) {
+	public List<String> directories(String url) throws IOException {
 		List<String> dirs = new ArrayList<String>();
 		for (String link : links(url)) {
 			if (link.endsWith("/") && !link.equals("./") && !link.equals("../")) {
@@ -159,7 +179,7 @@ public class HttpMavenRepository implements MavenRepository {
 		return dirs;
 	}
 	
-	public List<String> files(String url) {
+	public List<String> files(String url) throws IOException {
 		List<String> files = new ArrayList<String>();
 		for (String link : links(url)) {
 			if (!link.endsWith("/")) {
@@ -169,7 +189,7 @@ public class HttpMavenRepository implements MavenRepository {
 		return files;
 	}
 	
-	public List<String> links(String url) {
+	public List<String> links(String url) throws IOException {
 		String content = content(url);
 		Pattern p = Pattern.compile("href=\"([^\"]+)\"", Pattern.MULTILINE);
 		Matcher m = p.matcher(content);
@@ -181,28 +201,15 @@ public class HttpMavenRepository implements MavenRepository {
 	}
 
 	public String content(Gav gav) {
-		return content(url(gav));
-	}
-	
-	public String content(String url) {
 		try {
-			return Request.Get(url).execute().returnContent().asString();
+			return content(url(gav));
 		} catch (IOException e) {
-			throw new MavenException("Unable to get content");
+			throw new GavNotFoundException(gav, e);
 		}
 	}
 	
-	private void stream(InputStream is, OutputStream os) {
-		try {
-			byte[] buffer = new byte[1024];
-			int len = is.read(buffer);
-			while (len != -1) {
-			    os.write(buffer, 0, len);
-			    len = is.read(buffer);
-			}
-		} catch (Exception e) {
-			throw new MavenException("Unable to stream input to output", e);
-		}
+	private String content(String url) throws IOException {
+		return Request.Get(url).execute().returnContent().asString();
 	}
 
 }

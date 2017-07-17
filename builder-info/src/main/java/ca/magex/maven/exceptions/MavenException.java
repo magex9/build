@@ -16,11 +16,11 @@ public class MavenException extends RuntimeException {
 
 	private static final long serialVersionUID = 928948923492843L;
 
-	public MavenException(String msg) {
+	private MavenException(String msg) {
 		super(msg);
 	}
 
-	public MavenException(String msg, Exception e) {
+	private MavenException(String msg, Exception e) {
 		super(msg, e);
 	}
 
