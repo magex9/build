@@ -52,6 +52,8 @@ cd target
 echo Creating a webapp archetype
 mvn --batch-mode archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-webapp -DgroupId=ca.magex.archetype -DartifactId=mywebapp -Dversion=1.0.0-SNAPSHOT -Dpackage=ca.magex.archetype
 
+mvn ca.magex.build:builder-maven-plugin:complete-maven-repository -Dsrc=http://central.maven.org/maven2/ -Ddest=$WORKSPACE/local-repo
+
 # Zip up required content
 echo Deleting builder artifacts from final repo
 rm -rf $WORKSPACE/local-repo/ca
