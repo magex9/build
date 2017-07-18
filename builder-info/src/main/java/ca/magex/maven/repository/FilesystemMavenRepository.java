@@ -66,7 +66,7 @@ public class FilesystemMavenRepository implements MavenRepository {
 			if (file.isDirectory()) {
 				appendGroupIds(file, groupIds);
 			} else if (file.isFile() && file.getName().endsWith(".pom")) {
-				String groupId = file.getParentFile().getParentFile().getParent().substring(basedirLen);
+				String groupId = file.getParentFile().getParentFile().getParent().substring(basedirLen).replaceAll("/", ".");
 				if (!groupIds.contains(groupId))
 					groupIds.add(groupId);
 			}
