@@ -181,12 +181,17 @@ public class FilesystemMavenRepository implements MavenRepository {
 	
 	public void upload(Gav gav, InputStream is) {
 		FileOutputStream os = null;
+		File file = file(gav);
+		if (file.exists())
+			return;
+		file.getParentFile().mkdirs();
 		try {
-			os = new FileOutputStream(file(gav));
+			os = new FileOutputStream(file);
 			IOUtil.copy(is, os);
 		} catch (IOException e) {
 			throw new GavNotFoundException(gav, e);
 		} finally {
+			IOUtil.close(is);
 			IOUtil.close(os);
 		}
 	}

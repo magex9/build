@@ -1,12 +1,9 @@
 package ca.magex.maven.repository;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -17,7 +14,6 @@ import org.apache.commons.lang3.NotImplementedException;
 import org.apache.http.client.fluent.Request;
 
 import ca.magex.maven.exceptions.GavNotFoundException;
-import ca.magex.maven.exceptions.MavenException;
 import ca.magex.maven.model.Gav;
 
 public class HttpMavenRepository implements MavenRepository {
@@ -30,7 +26,7 @@ public class HttpMavenRepository implements MavenRepository {
 //		if (!content(baseurl).contains("Index of"))
 //			throw new MavenException("Base url is not in the expected format: " + baseurl);
 		this.repoId = repoId;
-		this.baseurl = baseurl;
+		this.baseurl = baseurl.replaceAll("/$", "");
 	}
 	
 	public List<String> findAllGroupIds() {
