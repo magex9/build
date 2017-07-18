@@ -7,7 +7,7 @@
 	<version>1.7.6-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>Builder Data</name>
+	<name>Builder Info</name>
 	<description>...</description>
 
 	<scm>
