@@ -1,6 +1,7 @@
 package ca.magex.ttl.products;
 
 import java.io.File;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -8,7 +9,6 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.io.FileUtils;
-import org.apache.xerces.impl.dv.util.Base64;
 
 public class ExpandRdx {
 
@@ -58,8 +58,9 @@ public class ExpandRdx {
 	
 	private String mid(String input) {
 		return "<http://magex.ca/data/mid/" + 
-				Base64.encode(DigestUtils.md5(input)).replaceAll("[^a-zA-Z0-9]", "").substring(0, 10) + 
-				">";
+				Base64.getEncoder().encode(DigestUtils.md5(input).toString().getBytes())
+				.toString().replaceAll("[^a-zA-Z0-9]", "").substring(0, 10) + 
+			">";
 	}
 	
 }

@@ -33,7 +33,6 @@ import org.apache.maven.repository.RepositorySystem;
 import org.apache.maven.settings.Settings;
 import org.apache.maven.shared.dependency.graph.DependencyGraphBuilder;
 
-import ca.magex.maven.exceptions.MavenException;
 import ca.magex.maven.model.Gav;
 
 /**
@@ -107,7 +106,7 @@ public abstract class AbstractMavenMojo extends AbstractMojo {
 		try {
 			return new MavenProject(new MavenXpp3Reader().read(new FileReader(file)));
 		} catch (Exception e) {
-			throw new MavenException("Unable to build maven project from file: " + file.getAbsolutePath());
+			throw new RuntimeException("Unable to build maven project from file: " + file.getAbsolutePath());
 		}
 	}
 
@@ -143,7 +142,7 @@ public abstract class AbstractMavenMojo extends AbstractMojo {
 			}
 			return projectList;
 		} catch (Exception e) {
-			throw new MavenException("Problem getting dependency projects", e);
+			throw new RuntimeException("Problem getting dependency projects", e);
 		}
 	}
 
@@ -165,7 +164,7 @@ public abstract class AbstractMavenMojo extends AbstractMojo {
 					Thread.currentThread().getContextClassLoader());
 			Thread.currentThread().setContextClassLoader(contextClassLoader);
 		} catch (Exception e) {
-			throw new MavenException("Unable to load the project's classpath", e);
+			throw new RuntimeException("Unable to load the project's classpath", e);
 		}
 	}
 
@@ -188,7 +187,7 @@ public abstract class AbstractMavenMojo extends AbstractMojo {
 		try {
 			return IOUtils.toString(getResourceAsStream(name), "UTF-8");
 		} catch (IOException e) {
-			throw new MavenException("Unable to read content: " + name, e);
+			throw new RuntimeException("Unable to read content: " + name, e);
 		}
 	}
 

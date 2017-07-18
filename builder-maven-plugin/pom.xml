@@ -17,9 +17,9 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>ca.magex.build</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>builder-info</artifactId>
-			<version>1.7.6-SNAPSHOT</version>
+			<version>${project.version}</version>
 		</dependency>
 
 		<dependency>
@@ -67,5 +67,18 @@
 		</dependency>
 
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>

@@ -18,10 +18,8 @@ import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 
-import ca.magex.maven.exceptions.MavenException;
 import ca.magex.maven.model.Gav;
 import ca.magex.maven.repository.MavenRepository;
-import ca.magex.maven.repository.MavenRepositoryFactory;
 
 @Mojo(name = "upload-maven-repository", requiresProject = false)
 public class UploadMavenRepositoryMojo extends AbstractMavenMojo {
@@ -50,7 +48,7 @@ public class UploadMavenRepositoryMojo extends AbstractMavenMojo {
 	}
 
 	private void upload(Gav pom, Gav file, List<Gav> classifiers, MavenRepository sourceRepo,
-			MavenRepository destRepo) {
+			MavenRepository destRepo) throws MojoExecutionException {
 		if (!destRepo.contains(pom)) {
 			getLog().info("Skipping " + pom + " because it already exists in " + dest);
 			return;
@@ -84,23 +82,19 @@ public class UploadMavenRepositoryMojo extends AbstractMavenMojo {
 			getLog().debug("  files: " + files);
 		}
 		
-		try {
-			executeMojo(
-				plugin(groupId("org.apache.maven.plugins"), artifactId("maven-deploy-plugin"), version("2.7")),
-				goal("deploy-file"),
-				configuration(element(name("url"), url),
-						element(name("repositoryId"), repositoryId),
-						element(name("file"), mainFile),
-						element(name("pomFile"), pomFile),
-						element(name("packaging"), packaging),
-						element(name("classifiers"), classifiersNames),
-						element(name("types"), types),
-						element(name("files"), files)),
-				executionEnvironment(mavenProject, session, pluginManager));
-			mavenProject.getAttachedArtifacts().clear();
-		} catch (MojoExecutionException e) {
-			throw new MavenException("Unable to deploy file: " + pom + " to " + destRepo.getBaseUrl(), e);
-		}
+		executeMojo(
+			plugin(groupId("org.apache.maven.plugins"), artifactId("maven-deploy-plugin"), version("2.7")),
+			goal("deploy-file"),
+			configuration(element(name("url"), url),
+					element(name("repositoryId"), repositoryId),
+					element(name("file"), mainFile),
+					element(name("pomFile"), pomFile),
+					element(name("packaging"), packaging),
+					element(name("classifiers"), classifiersNames),
+					element(name("types"), types),
+					element(name("files"), files)),
+			executionEnvironment(mavenProject, session, pluginManager));
+		mavenProject.getAttachedArtifacts().clear();
 		
 	}
 
