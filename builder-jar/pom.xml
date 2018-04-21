@@ -3,14 +3,14 @@
 
 	<groupId>ca.magex.build</groupId>
 	<artifactId>builder-jar</artifactId>
-	<version>1.7.7</version>
+	<version>1.7.8-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>Builder JAR</name>
 	<description>...</description>
 
 	<scm>
-		<developerConnection>scm:svn:https://github.com/magex9/build.git/tags/builder-product-1.7.7/builder-jar</developerConnection>
+		<developerConnection>scm:svn:https://github.com/magex9/build.git/tags/builder-product-1.6.5/builder-jar</developerConnection>
 	</scm>
 
 	<dependencies>
@@ -27,7 +27,7 @@
 			<plugin>
 				<groupId>ca.magex.build</groupId>
 				<artifactId>builder-maven-plugin</artifactId>
-				<version>1.7.7</version>
+				<version>1.7.8-SNAPSHOT</version>
 				<executions>
 					<execution>
 						<phase>compile</phase>
