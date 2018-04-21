@@ -9,6 +9,11 @@ if [ -d $CHECKOUT ]; then
 	rm -rf $CHECKOUT
 fi
 
+cd $WORKSPACE
+wget http://apache.mirror.colo-serv.net/maven/maven-3/3.5.3/binaries/apache-maven-3.5.3-bin.tar.gz
+tar -xzf apache-maven-3.5.3-bin.tar.gz
+export $M2_HOME=$WORKSPACE/apache-maven-3.5.3
+
 echo Checkout $SVNBASE/trunk to $CHECKOUT
 svn checkout $SVNBASE/trunk $CHECKOUT
 
