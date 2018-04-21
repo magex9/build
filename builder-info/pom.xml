@@ -3,14 +3,14 @@
 
 	<groupId>ca.magex.build</groupId>
 	<artifactId>builder-info</artifactId>
-	<version>1.7.7-SNAPSHOT</version>
+	<version>1.7.7</version>
 	<packaging>jar</packaging>
 
 	<name>Builder Info</name>
 	<description>...</description>
 
 	<scm>
-		<developerConnection>scm:svn:https://github.com/magex9/build.git/tags/builder-product-1.6.5/builder-info</developerConnection>
+		<developerConnection>scm:svn:https://github.com/magex9/build.git/tags/builder-product-1.7.7/builder-info</developerConnection>
 	</scm>
 
 	<dependencies>

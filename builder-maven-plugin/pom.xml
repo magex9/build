@@ -3,14 +3,14 @@
 
 	<groupId>ca.magex.build</groupId>
 	<artifactId>builder-maven-plugin</artifactId>
-	<version>1.7.7-SNAPSHOT</version>
+	<version>1.7.7</version>
 	<packaging>maven-plugin</packaging>
 
 	<name>Builder Maven Plugin</name>
 	<description>...</description>
 
 	<scm>
-		<developerConnection>scm:svn:https://github.com/magex9/build.git/tags/builder-product-1.6.5/builder-maven-plugin</developerConnection>
+		<developerConnection>scm:svn:https://github.com/magex9/build.git/tags/builder-product-1.7.7/builder-maven-plugin</developerConnection>
 	</scm>
 
 	<dependencies>
