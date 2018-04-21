@@ -1,17 +1,16 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>ca.magex.build</groupId>
 	<artifactId>builder-jar</artifactId>
-	<version>1.7.6-SNAPSHOT</version>
+	<version>1.7.6</version>
 	<packaging>jar</packaging>
 
 	<name>Builder JAR</name>
 	<description>...</description>
 
 	<scm>
-		<developerConnection>scm:svn:https://github.com/magex9/build.git/tags/builder-product-1.6.5/builder-jar</developerConnection>
+		<developerConnection>scm:svn:https://github.com/magex9/build.git/tags/builder-product-1.7.6/builder-jar</developerConnection>
 	</scm>
 
 	<dependencies>
@@ -28,7 +27,7 @@
 			<plugin>
 				<groupId>ca.magex.build</groupId>
 				<artifactId>builder-maven-plugin</artifactId>
-				<version>1.7.6-SNAPSHOT</version>
+				<version>1.7.6</version>
 				<executions>
 					<execution>
 						<phase>compile</phase>
