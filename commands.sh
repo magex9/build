@@ -61,3 +61,4 @@ rm -rf $WORKSPACE/local-repo/ca
 echo Zipping repository into $WORKSPACE/maven-central.tar.gz
 tar -c $WORKSPACE/local-repo/* | gzip > $WORKSPACE/maven-central.tar.gz
 
+find $WORKSPACE | grep -v '.svn' | grep -v '.DS_Store' > $CHECKOUT/find.out 
