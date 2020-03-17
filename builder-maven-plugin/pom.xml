@@ -9,6 +9,10 @@
 	<name>Builder Maven Plugin</name>
 	<description>...</description>
 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
 	<scm>
 		<developerConnection>scm:svn:https://github.com/magex9/build.git/tags/builder-product-1.6.5/builder-maven-plugin</developerConnection>
 	</scm>

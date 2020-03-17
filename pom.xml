@@ -20,7 +20,7 @@
 		<module>builder-assembly</module>
 		<module>builder-jar</module>
 		<module>builder-war</module>
-		<module>builder-ear</module>
+		<!-- <module>builder-ear</module> -->
 		<module>builder-exec-program</module>
 		<module>builder-info</module>
 		<module>builder-reporting</module>

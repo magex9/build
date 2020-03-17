@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# The base directory where the project can be worked on
+export WORKSPACE=x:/build/maven
+
+# The base svn directory of the build project
+export SVNBASE="https://github.com/magex9/build.git"
+
+sh commands.sh | tee $WORKSPACE/setup-`date "+%Y%m%d%H%M%S"`.log
